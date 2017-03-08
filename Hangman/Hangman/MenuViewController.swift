@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +22,18 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func startGameClicked(_ sender: UIButton) {
+        //let gameViewController = GameViewController()
+        
+        //self.present(gameViewController, animated: true, completion: nil)
+        print("start game clicked")
+    }
+    @IBAction func resetModelClicked(_ sender: UIButton) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("prepare")
+    }
 }
 
