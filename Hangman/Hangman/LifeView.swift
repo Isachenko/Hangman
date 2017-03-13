@@ -20,19 +20,31 @@ class LifeView: UIView {
         let radius = min(bounds.size.height, bounds.size.width / CGFloat(maxLife)) / 2
         let center = CGPoint(x: ((bounds.size.width / CGFloat(maxLife))*CGFloat(index)) + radius, y: radius)
         
-        let life = UIBezierPath(arcCenter: center, radius: radius, startAngle: 0, endAngle: 2*CGFloat(M_PI), clockwise: true)
+        let life = UIBezierPath(arcCenter: center, radius: radius, startAngle: 0, endAngle: 2*CGFloat(M_PI), clockwise:
+            true)
+        
+        
+        
+        
         life.lineWidth = 1
+        #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1).set()
+        life.fill()
         return life
     }
+    
+    
+    
+    
     
     override func draw(_ rect: CGRect) {
         for i in 0..<maxLife {
             let life = getPathForLife(index: i)
             if i < currentLife {
+                
                 #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1).set()
                 life.fill()
             }
-            #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).set()
+            #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).set()
             life.stroke()
         }
     }

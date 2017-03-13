@@ -11,22 +11,77 @@ import UIKit
 
 class GameViewController: UIViewController, UIPopoverPresentationControllerDelegate, WordPickerViewControllerDelegate, PlayerPanelViewDelegate {
     
+    @IBOutlet var addItemView: UIView!
+    @IBOutlet weak var visualEffectView: UIVisualEffectView!
+    var effect: UIVisualEffect!
+    
+   
     var wordChosen: Bool = false
     var currentGameModel = CurrentGameModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        effect = visualEffectView.effect
+        visualEffectView.effect = nil
+        addItemView.layer.cornerRadius = 5
+        
+        visualEffectView.isUserInteractionEnabled=false
         // Do any additional setup after loading the view, typically from a nib.
         humanPanelView.delegate = self
         aiPanelView.delegate = self
         
+       // popupAnimationIn()
+        
+        
+        
     }
     
+    func popupAnimationIn(){
+        self.view.addSubview(addItemView)
+        addItemView.center = self.view.center
+        
+        addItemView.transform = CGAffineTransform.init(scaleX: 1.3, y:1.3)
+        addItemView.alpha = 0
+        
+        UIView.animate(withDuration: 0.4){
+            self.visualEffectView.effect = self.effect
+            self.addItemView.alpha = 1
+            self.addItemView.transform = CGAffineTransform.identity
+        }
+        
+        self.visualEffectView.isUserInteractionEnabled = true
+     
+        
+    }
+    
+    
+    func popupAnimationOut(){
+        UIView.animate(withDuration: 0.3, animations:{
+            self.addItemView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.addItemView.alpha = 0
+            self.visualEffectView.effect = nil
+        }) { (success: Bool) in
+            self.addItemView.removeFromSuperview()
+            
+        }
+         self.visualEffectView.isUserInteractionEnabled = false
+        
+    }
+    
+    @IBAction func closePopup(_ sender: Any) {
+        popupAnimationOut()
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         
         if (!wordChosen) {
             chooseWord()
         }
+    }
+    
+   
+    @IBAction func test(_ sender: Any) {
+        popupAnimationIn()
     }
     
     override func didReceiveMemoryWarning() {

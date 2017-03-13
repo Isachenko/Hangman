@@ -39,7 +39,7 @@ class PlayerInfo {
     func tryLetter(letter: Character) -> tryLetterResult {
         if !usedLetters.contains(String(letter)){
             usedLetters.append(contentsOf: [letter])
-            if wordToGuess.contains(String(letter)) {
+            if wordToGuess.contains(String(letter).lowercased()) {
                 goodLetters.append(contentsOf: [letter])
                 return .rightLetter
             } else {

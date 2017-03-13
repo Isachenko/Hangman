@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+
 class CurrentGameModel {
     
     let human = PlayerInfo()
@@ -35,7 +37,7 @@ class CurrentGameModel {
     
     func humanTryLetter(letter: Character){
         if (gameState == .humanTurn) {
-            let result = human.tryLetter(letter: letter)
+            let result = human.tryLetter(letter: String(letter).lowercased().characters.first!)
             switch result {
             case .error:
                 print("human: try letter \(letter) error")

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C456CB81E7050E300839220 /* red_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C456CB41E7050E300839220 /* red_heart.png */; };
+		1C456CB91E7050E300839220 /* grey_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C456CB51E7050E300839220 /* grey_heart.png */; };
+		1C456CBA1E7050E300839220 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C456CB61E7050E300839220 /* background.jpg */; };
+		1C456CBB1E7050E300839220 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C456CB71E7050E300839220 /* logo.png */; };
+		1C456CBF1E705F5300839220 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C456CBE1E705F5300839220 /* TutorialViewController.swift */; };
+		6ACD15F71E7690D20054E73C /* hangman.actr in Resources */ = {isa = PBXBuildFile; fileRef = 6ACD15F61E7690D20054E73C /* hangman.actr */; };
 		6AFFC7791E59AC6700C7E487 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFC7781E59AC6700C7E487 /* AppDelegate.swift */; };
 		6AFFC77B1E59AC6700C7E487 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFC77A1E59AC6700C7E487 /* MenuViewController.swift */; };
 		6AFFC77E1E59AC6700C7E487 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFFC77C1E59AC6700C7E487 /* Main.storyboard */; };
@@ -34,16 +40,23 @@
 		6AFFC7EE1E64225900C7E487 /* GlobalInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFC7ED1E64225900C7E487 /* GlobalInfoModel.swift */; };
 		6AFFC7F01E6B23B300C7E487 /* PlayerPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFC7EF1E6B23B300C7E487 /* PlayerPanelView.swift */; };
 		6AFFC7F71E6C360000C7E487 /* AIBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFC7F61E6C360000C7E487 /* AIBrain.swift */; };
+		F512F3491E75D13600EDBE5D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F512F3481E75D13600EDBE5D /* SignUpViewController.swift */; };
+		F550A76A1E747BAA00AFBBC8 /* roundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550A7691E747BAA00AFBBC8 /* roundButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C456CB41E7050E300839220 /* red_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_heart.png; sourceTree = "<group>"; };
+		1C456CB51E7050E300839220 /* grey_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grey_heart.png; sourceTree = "<group>"; };
+		1C456CB61E7050E300839220 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		1C456CB71E7050E300839220 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		1C456CBE1E705F5300839220 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		6ACD15F61E7690D20054E73C /* hangman.actr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hangman.actr; sourceTree = "<group>"; };
 		6AFFC7751E59AC6700C7E487 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AFFC7781E59AC6700C7E487 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AFFC77A1E59AC6700C7E487 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		6AFFC77D1E59AC6700C7E487 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6AFFC77F1E59AC6700C7E487 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AFFC7821E59AC6700C7E487 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6AFFC7841E59AC6700C7E487 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AFFC7C11E59AFE500C7E487 /* Chunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chunk.swift; sourceTree = "<group>"; };
 		6AFFC7C21E59AFE500C7E487 /* Production.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Production.swift; sourceTree = "<group>"; };
 		6AFFC7C31E59AFE500C7E487 /* Procedural.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Procedural.swift; sourceTree = "<group>"; };
@@ -66,6 +79,8 @@
 		6AFFC7ED1E64225900C7E487 /* GlobalInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalInfoModel.swift; sourceTree = "<group>"; };
 		6AFFC7EF1E6B23B300C7E487 /* PlayerPanelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPanelView.swift; sourceTree = "<group>"; };
 		6AFFC7F61E6C360000C7E487 /* AIBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIBrain.swift; sourceTree = "<group>"; };
+		F512F3481E75D13600EDBE5D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		F550A7691E747BAA00AFBBC8 /* roundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +125,13 @@
 		6AFFC78A1E59AC8A00C7E487 /* support files */ = {
 			isa = PBXGroup;
 			children = (
+				1C456CB41E7050E300839220 /* red_heart.png */,
+				1C456CB51E7050E300839220 /* grey_heart.png */,
+				1C456CB61E7050E300839220 /* background.jpg */,
+				1C456CB71E7050E300839220 /* logo.png */,
 				6AFFC7781E59AC6700C7E487 /* AppDelegate.swift */,
 				6AFFC77F1E59AC6700C7E487 /* Assets.xcassets */,
 				6AFFC7811E59AC6700C7E487 /* LaunchScreen.storyboard */,
-				6AFFC7841E59AC6700C7E487 /* Info.plist */,
 			);
 			name = "support files";
 			sourceTree = "<group>";
@@ -152,6 +170,9 @@
 		6AFFC7F41E6C1A5700C7E487 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F512F3481E75D13600EDBE5D /* SignUpViewController.swift */,
+				F550A7691E747BAA00AFBBC8 /* roundButton.swift */,
+				1C456CBE1E705F5300839220 /* TutorialViewController.swift */,
 				6AFFC77A1E59AC6700C7E487 /* MenuViewController.swift */,
 				6AFFC7E11E609AC300C7E487 /* GameViewController.swift */,
 				6AFFC7E71E63384200C7E487 /* WordPickerViewController.swift */,
@@ -164,6 +185,7 @@
 			children = (
 				6AFFC7E91E6421F600C7E487 /* CurrentGameModel.swift */,
 				6AFFC7F61E6C360000C7E487 /* AIBrain.swift */,
+				6ACD15F61E7690D20054E73C /* hangman.actr */,
 				6AFFC7EB1E64222A00C7E487 /* PlayerInfo.swift */,
 				6AFFC7ED1E64225900C7E487 /* GlobalInfoModel.swift */,
 			);
@@ -230,6 +252,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AFFC7831E59AC6700C7E487 /* LaunchScreen.storyboard in Resources */,
+				1C456CB81E7050E300839220 /* red_heart.png in Resources */,
+				1C456CBA1E7050E300839220 /* background.jpg in Resources */,
+				1C456CBB1E7050E300839220 /* logo.png in Resources */,
+				1C456CB91E7050E300839220 /* grey_heart.png in Resources */,
+				6ACD15F71E7690D20054E73C /* hangman.actr in Resources */,
 				6AFFC7801E59AC6700C7E487 /* Assets.xcassets in Resources */,
 				6AFFC77E1E59AC6700C7E487 /* Main.storyboard in Resources */,
 			);
@@ -242,11 +269,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F550A76A1E747BAA00AFBBC8 /* roundButton.swift in Sources */,
 				6AFFC7D41E59AFE500C7E487 /* Model.swift in Sources */,
 				6AFFC7D91E59AFE500C7E487 /* SlotAction.swift in Sources */,
 				6AFFC7D61E59AFE500C7E487 /* Instantiation.swift in Sources */,
 				6AFFC7F01E6B23B300C7E487 /* PlayerPanelView.swift in Sources */,
 				6AFFC7D81E59AFE500C7E487 /* BufferCondition.swift in Sources */,
+				F512F3491E75D13600EDBE5D /* SignUpViewController.swift in Sources */,
 				6AFFC7D51E59AFE500C7E487 /* Tokenizer.swift in Sources */,
 				6AFFC7F71E6C360000C7E487 /* AIBrain.swift in Sources */,
 				6AFFC7D21E59AFE500C7E487 /* Declarative.swift in Sources */,
@@ -259,6 +288,7 @@
 				6AFFC7EE1E64225900C7E487 /* GlobalInfoModel.swift in Sources */,
 				6AFFC7E81E63384200C7E487 /* WordPickerViewController.swift in Sources */,
 				6AFFC7CF1E59AFE500C7E487 /* Production.swift in Sources */,
+				1C456CBF1E705F5300839220 /* TutorialViewController.swift in Sources */,
 				6AFFC7D31E59AFE500C7E487 /* Support.swift in Sources */,
 				6AFFC7E21E609AC300C7E487 /* GameViewController.swift in Sources */,
 				6AFFC7CE1E59AFE500C7E487 /* Chunk.swift in Sources */,

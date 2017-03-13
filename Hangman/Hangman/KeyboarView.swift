@@ -17,9 +17,9 @@ class KeyboardView: UIView {
     
     var delegate: KeyboardDelegate?
     
-    var firstLineLetters = "qwertyuiop"
-    var secondLineLetters = "asdfghjkl"
-    var thirdLineLetters = "zxcvbnm"
+    var firstLineLetters = "QWERTYUIOP"
+    var secondLineLetters = "ASDFGHJKL"
+    var thirdLineLetters = "ZXCVBNM"
     var hightlightedLetters = ""
     
     //override init(){

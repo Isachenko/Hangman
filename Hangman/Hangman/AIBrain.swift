@@ -15,7 +15,14 @@ class AIBrain {
     var wordRepresentation = ""
     var possibleLetters = "qwertyuiopasdfghjklzxcvbnm"
     
-    func getLetter() -> Character {        
+    var actrAI : Model
+    
+    init() {
+        actrAI = Model()
+        actrAI.loadModel(fileName: "hangman")
+    }
+    
+    func getRandomLetter() -> Character {
         while true {
             let index:Int = Int(arc4random_uniform(UInt32(possibleLetters.characters.count)))
             let letter = possibleLetters.characters[possibleLetters.index(possibleLetters.startIndex, offsetBy: index)]
@@ -24,6 +31,16 @@ class AIBrain {
                 return letter
             }
         }
-        
     }
+    
+    func getLetter() -> Character {
+        actrAI.run()
+        //print(actrAI.lastAction("choice2"))
+        return actrAI.lastAction("choice")!.characters.first!
+    }
+    
+    func setFeedback() {
+        //actrAI.modifyLastAction(slot: "opponent", value: playerAction.rawValue.lowercased())
+    }
+    
 }

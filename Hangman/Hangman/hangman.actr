@@ -1,0 +1,77 @@
+;;; Model of Rock Paper Scissors
+;;;
+
+(add-dm
+;;Letters
+    (LA isa letter value a used false)
+    (LB isa letter value b used false)
+    (LC isa letter value c used false)
+    (LD isa letter value d used false)
+    (LE isa letter value e used false)
+    (LF isa letter value f used false)
+    (LG isa letter value g used false)
+    (LH isa letter value h used false)
+    (LI isa letter value i used false)
+    (LJ isa letter value j used false)
+    (LK isa letter value k used false)
+    (LL isa letter value l used false)
+    (LM isa letter value m used false)
+    (LN isa letter value n used false)
+    (LO isa letter value o used false)
+    (LP isa letter value p used false)
+    (LQ isa letter value q used false)
+    (LR isa letter value r used false)
+    (LS isa letter value s used false)
+    (LT isa letter value t used false)
+    (LU isa letter value u used false)
+    (LV isa letter value v used false)
+    (LW isa letter value w used false)
+    (LX isa letter value x used false)
+    (LY isa letter value y used false)
+    (LZ isa letter value z used false)
+
+    (W1 isa word value conclusion)
+    (W1 isa word value illusion)
+    (W1 isa word value dousen)
+    (W1 isa word value usage)
+    (W1 isa word value table)
+    (W1 isa word value computer)
+
+    (goal isa goal state guess_letter)
+)
+
+(set-all-baselevels -100 10) ;; time offset and number of references
+
+;; At the start of the model, retrieve any decision
+
+(p retrieve-decision
+   =goal>
+     isa goal
+     state guess_letter
+     isLastLetterGood nil
+==>
+   =goal>
+     state anounce_decision
+   +retrieval>
+        isa letter
+
+)
+
+(p make-decision
+    =goal>
+        isa goal
+        state anounce_decision
+    =retrieval>
+        isa letter
+        value =decision
+==>
+    =goal>
+        state retrieve-decision
+    +action>
+        isa letter
+        choice =decision
+
+)
+
+(goal-focus goal)
+

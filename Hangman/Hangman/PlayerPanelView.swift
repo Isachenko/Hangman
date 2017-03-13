@@ -34,7 +34,15 @@ class PlayerPanelView: UIView, KeyboardDelegate {
     
     private func addComponents() {
         nameLabel.text = "player name"
+        nameLabel.textColor = UIColor.white
+        nameLabel.backgroundColor = UIColor.black
+        nameLabel.textAlignment = .center
+        
+        
         wordLabel.text = "_____"
+        wordLabel.textColor = UIColor.white
+        wordLabel.backgroundColor = UIColor.black
+        wordLabel.textAlignment =  .center
         
         keyboardView.delegate = self
         
@@ -54,9 +62,9 @@ class PlayerPanelView: UIView, KeyboardDelegate {
         self.addConstraints(stackView_H)
         self.addConstraints(stackView_V)
         
-        lifeView.backgroundColor = UIColor.white
+        lifeView.backgroundColor = UIColor.black
         lifeView.contentMode = .redraw
-        keyboardView.backgroundColor = UIColor.white
+        keyboardView.backgroundColor = UIColor.black
         keyboardView.contentMode = .redraw
     }
     
