@@ -61,9 +61,11 @@ class CurrentGameModel {
                 print("ai: try letter \(letter) error")
             case .rightLetter:
                 print("ai: right letter \(letter)")
+                aiBrain.setFeedback(value: "right")
                 gameState = .humanTurn
             case .wrongLetter:
                 print("ai: wrong letter \(letter)")
+                aiBrain.setFeedback(value: "wrong")
                 gameState = .humanTurn
             }
             checkForGameEnd()

@@ -38,24 +38,26 @@
     (W1 isa word value computer)
 
     (goal isa goal state guess_letter)
+    (goal2 isa goal state reinforce-right-guess)
+    (goal3 isa goal state GameOverCheck)
+    (goal4 isa goal state reset)
 )
 
 (set-all-baselevels -100 10) ;; time offset and number of references
 
 ;; At the start of the model, retrieve any decision
 
-(p retrieve-decision
+(p retrieve-letter
    =goal>
      isa goal
      state guess_letter
-     isLastLetterGood nil
+
 ==>
    =goal>
      state anounce_decision
    +retrieval>
         isa letter
         used false
-
 )
 
 (p make-decision
@@ -71,7 +73,7 @@
     =retrieval>
         used true
     +action>
-        isa letter
+        isa move
         choice =decision
 )
 
@@ -83,9 +85,63 @@
      -retrieval>
      =goal>
          isa goal
-         state guess_letter
+         state recording-result
 )
 
+(p get-feedback
+     =goal>
+         isa goal
+         state recording-result
+     =action>
+         isa move
+         feedback =result
+==>
+     =goal>
+         isa goal
+         state guess_letter
+         ifLastLetterGood =result
+)
+
+(p reinforce-guess
+     =goal>
+         isa goal
+         state reinforce-right-guess
+         ifLastLetterGood right
+==>
+
+     =goal>
+         isa goal
+         state GetGameOverStatus
+
+)
+
+(p ignore-wrong-guess
+     =goal>
+         isa goal
+         state reinforce-right-guess
+         ifLastLetterGood wrong
+==>
+
+     =goal>
+         isa goal
+         state GetGameOverStatus
+
+)
+
+(p get-gameover-status
+     =goal>
+         isa goal
+         state GetGameOverStatus
+==>
+     =action>
+         isa move
+         IfGameOver =end
+==>
+     +goal>
+         isa goal
+         state GameOverCheck
+         GameOverStatus =end
+)
 
 (goal-focus goal)
 
