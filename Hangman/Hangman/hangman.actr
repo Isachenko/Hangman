@@ -54,6 +54,7 @@
      state anounce_decision
    +retrieval>
         isa letter
+        used false
 
 )
 
@@ -66,12 +67,25 @@
         value =decision
 ==>
     =goal>
-        state retrieve-decision
+        state modify-chunks
+    =retrieval>
+        used true
     +action>
         isa letter
         choice =decision
-
 )
+
+(p modify-chunks
+     =goal>
+         state modify-chunks
+     =retrieval>
+==>
+     -retrieval>
+     =goal>
+         isa goal
+         state guess_letter
+)
+
 
 (goal-focus goal)
 
