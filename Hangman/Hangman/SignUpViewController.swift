@@ -24,11 +24,32 @@ class SignUpViewController: UIViewController {
         nameTextField.alpha = 0
         confirmButton.alpha = 0
         startButton.alpha = 0
-        
-        
-        
-       
-
+     
+     
+       // let databaseURL = documentDirectoryURL.URLByAppendingPathComponent("MyDataBase.sqlite")
+     //either this 
+     //
+    //let fileExists = (try? databaseURL.checkResourceIsReachable()) ?? false    
+    // or    
+     
+  /*   
+     do {
+    let fileExists = try databaseURL.checkResourceIsReachable()
+    // handle the boolean result
+} catch let error as NSError {
+    print(error)
+}
+*/
+     
+     
+     /*
+     let filePath = "/Applications/MySample.app"
+if (FileManager.default.fileExists(atPath: filePath)) {
+    // avoid open add friend
+}
+     */
+     
+     
      /*
          
        var userName: String=""
