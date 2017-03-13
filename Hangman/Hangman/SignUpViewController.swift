@@ -52,32 +52,32 @@ class SignUpViewController: UIViewController {
            
         }
         */
-        
         viewDidApear()
-
-
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+override func didReceiveMemoryWarning() {
+super.didReceiveMemoryWarning()
+// Dispose of any resources that can be recreated.
+}
+    
+ 
+ // this function is to load the main logo by setting alpha to 1 then calling the loadtitle function
  func viewDidApear ()
-    {
-        
-        UIView.animate(withDuration: 1, animations: {
-            self.mainLogo.alpha = 1
-        }) { (true) in
-            self.loadTitle()
-        }
-            
+    {   
+UIView.animate(withDuration: 1, animations: {
+ self.mainLogo.alpha = 1
+ }) { (true) in
+       self.loadTitle()
+    }       
     }
  
-    @IBAction func acceptedName(_ sender: Any) {
-        UIView.animate(withDuration: 1, animations: {
-            self.startButton.alpha = 1
-        }) 
+ 
+@IBAction func acceptedName(_ sender: Any) {
+UIView.animate(withDuration: 1, animations: {
+      self.startButton.alpha = 1 }) 
     }
+ 
+ 
 func loadwelcome(){
     UIView.animate(withDuration: 1, animations: {
         self.welcomeTitle.text = "Welcome"
