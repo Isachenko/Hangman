@@ -54,7 +54,7 @@
 
 ==>
    =goal>
-     state anounce_decision
+        state anounce_decision
    +retrieval>
         isa letter
         used false
@@ -98,21 +98,26 @@
 ==>
      =goal>
          isa goal
-         state guess_letter
+         state reinforce-right-guess
          ifLastLetterGood =result
 )
 
+
 (p reinforce-guess
      =goal>
-         isa goal
-         state reinforce-right-guess
-         ifLastLetterGood right
-==>
+        isa goal
+        state reinforce-right-guess
+        ifLastLetterGood right
+     ?imaginal>
+        state free
 
+==>
      =goal>
          isa goal
-         state GetGameOverStatus
-
+         state guess_letter
+     +imaginal>
+         value =deciison
+         used true
 )
 
 (p ignore-wrong-guess
@@ -121,27 +126,15 @@
          state reinforce-right-guess
          ifLastLetterGood wrong
 ==>
-
      =goal>
          isa goal
-         state GetGameOverStatus
-
+         state guess_letter
 )
 
-(p get-gameover-status
-     =goal>
-         isa goal
-         state GetGameOverStatus
-==>
-     =action>
-         isa move
-         IfGameOver =end
-==>
-     +goal>
-         isa goal
-         state GameOverCheck
-         GameOverStatus =end
-)
+
+
+
+
 
 (goal-focus goal)
 
