@@ -100,19 +100,25 @@ class CurrentGameModel {
         if (gameState == .aiTurn) {
             let letter = aiBrain.getLetter()
             let result = ai.tryLetter(letter: letter)
+            var feedback = ""
             switch result {
             case .error:
                 print("ai: try letter \(letter) error")
             case .rightLetter:
                 print("ai: right letter \(letter)")
-                aiBrain.setFeedback(value: "right")
+                feedback = "right"
                 gameState = .humanTurn
             case .wrongLetter:
                 print("ai: wrong letter \(letter)")
-                aiBrain.setFeedback(value: "wrong")
+                feedback = "wrong"
                 gameState = .humanTurn
             }
             checkForGameEnd()
+            var gameEnd = "no"
+            if (gameState == .aiJustWon) || (gameState == .humanJustWon) {
+                gameEnd = "yes"
+            }
+            aiBrain.setFeedback(value: feedback, gameEnd: gameEnd)
         }
     }
     

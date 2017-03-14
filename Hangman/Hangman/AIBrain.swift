@@ -39,9 +39,9 @@ class AIBrain {
         return actrAI.lastAction("choice")!.characters.first!
     }
     
-    func setFeedback(value: String) {
+    func setFeedback(value: String, gameEnd: String) {
         actrAI.modifyLastAction(slot: "feedback", value: value)
-        actrAI.modifyLastAction(slot: "IfGameOver", value: value)
+        actrAI.modifyLastAction(slot: "IfGameOver", value: gameEnd)
     }
     
 }
