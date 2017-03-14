@@ -13,6 +13,7 @@
 		1C456CBB1E7050E300839220 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C456CB71E7050E300839220 /* logo.png */; };
 		1C456CBF1E705F5300839220 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C456CBE1E705F5300839220 /* TutorialViewController.swift */; };
 		6ACD15F71E7690D20054E73C /* hangman.actr in Resources */ = {isa = PBXBuildFile; fileRef = 6ACD15F61E7690D20054E73C /* hangman.actr */; };
+		6ACD15F91E7803000054E73C /* Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6ACD15F81E7803000054E73C /* Words.txt */; };
 		6AFFC7791E59AC6700C7E487 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFC7781E59AC6700C7E487 /* AppDelegate.swift */; };
 		6AFFC77B1E59AC6700C7E487 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFC77A1E59AC6700C7E487 /* MenuViewController.swift */; };
 		6AFFC77E1E59AC6700C7E487 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFFC77C1E59AC6700C7E487 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		1C456CB71E7050E300839220 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		1C456CBE1E705F5300839220 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		6ACD15F61E7690D20054E73C /* hangman.actr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hangman.actr; sourceTree = "<group>"; };
+		6ACD15F81E7803000054E73C /* Words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Words.txt; sourceTree = "<group>"; };
 		6AFFC7751E59AC6700C7E487 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AFFC7781E59AC6700C7E487 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AFFC77A1E59AC6700C7E487 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				1C456CB41E7050E300839220 /* red_heart.png */,
+				6ACD15F81E7803000054E73C /* Words.txt */,
 				1C456CB51E7050E300839220 /* grey_heart.png */,
 				1C456CB61E7050E300839220 /* background.jpg */,
 				1C456CB71E7050E300839220 /* logo.png */,
@@ -253,6 +256,7 @@
 			files = (
 				6AFFC7831E59AC6700C7E487 /* LaunchScreen.storyboard in Resources */,
 				1C456CB81E7050E300839220 /* red_heart.png in Resources */,
+				6ACD15F91E7803000054E73C /* Words.txt in Resources */,
 				1C456CBA1E7050E300839220 /* background.jpg in Resources */,
 				1C456CBB1E7050E300839220 /* logo.png in Resources */,
 				1C456CB91E7050E300839220 /* grey_heart.png in Resources */,

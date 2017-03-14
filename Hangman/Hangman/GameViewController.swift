@@ -97,13 +97,14 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
         if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "wordPicker") as? WordPickerViewController {
             viewController.delegate = self
             self.present(viewController, animated: true, completion: nil)
-            viewController.setWords(words: ["hello", "my", "friend", "mother", "twitter", "cognition", "gravity", "november", "table", "coloboration"])
+            viewController.setWords(words: currentGameModel.getRandomWords(number: 20))
         }
     }
     
     func wordChosen(word: String) {
         currentGameModel.reset()
-        currentGameModel.setWords(forHuman: "Veryhardword", forAI: word)
+        let wordForHuman = currentGameModel.getRandomWords(number: 1)[0]
+        currentGameModel.setWords(forHuman: wordForHuman, forAI: word)
         updateViews()
         showNames()
         wordChosen = true
