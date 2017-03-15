@@ -1,1 +1,3 @@
-# Hangman Hirad Changing it 
+# Hangman 
+Back to normal
+
