@@ -40,8 +40,8 @@ class AIBrain {
     }
     
     func setFeedback(value: String, gameEnd: String) {
-        //actrAI.modifyLastAction(slot: "feedback", value: value)
-        //actrAI.modifyLastAction(slot: "IfGameOver", value: gameEnd)
+        actrAI.modifyLastAction(slot: "feedback", value: value)
+        actrAI.modifyLastAction(slot: "ifgameover", value: gameEnd)
     }
     
 }

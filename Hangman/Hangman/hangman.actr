@@ -69,7 +69,7 @@
         value =decision
 ==>
     =goal>
-        state recording-result
+        state modify-chunks
         letteris =decision
     =retrieval>
         used true
@@ -77,6 +77,17 @@
         isa move
         choice =decision
 )
+
+(p modify-chunks
+    =goal>
+        state modify-chunks
+    =retrieval>
+==>
+    -retrieval>
+    =goal>
+        isa goal
+        state recording-result)
+
 
 (p get-feedback
      =goal>
@@ -105,13 +116,22 @@
 ==>
      =goal>
          isa goal
-         state modify-chunks
+         state clear-imaginal
      +imaginal>
          value =decision
          used true
-     -imaginal>
-     -action
 
+)
+
+(p clear-imaginal
+     =goal>
+        isa goal
+        state clear-imaginal
+==>
+    -imaginal>
+    =goal>
+        isa goal
+        state guess_letter
 )
 
 
@@ -123,22 +143,10 @@
 ==>
      =goal>
          isa goal
-         state modify-chunks
-     -action>
+         state guess_letter
 )
-
-(p modify-chunks
-     =goal>
-         state modify-chunks
-     =retrieval>
-==>
-     -retrieval>
-     =goal>
-        isa goal
-        state guess_letter)
-
-
 
 
 (goal-focus goal)
+
 
