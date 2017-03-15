@@ -22,24 +22,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="6BX-hr-n1L">
+                                <rect key="frame" x="0.0" y="-32" width="398" height="699"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XpN-ME-EFN">
                                 <rect key="frame" x="28" y="20" width="320" height="639"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bdO-Mf-Ey7">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="609"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="606"/>
+                                        <color key="backgroundColor" red="0.02755308523774147" green="0.018976883962750435" blue="0.052015349268913269" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bU-7c-QFA" customClass="roundButton" customModule="Hangman" customModuleProvider="target">
-                                        <rect key="frame" x="141.5" y="609" width="37" height="30"/>
-                                        <state key="normal" title="Done"/>
+                                        <rect key="frame" x="138.5" y="606" width="43" height="33"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" red="0.9879181981086731" green="0.99617189168930054" blue="0.99605172872543335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="7"/>
+                                                <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.36302132933220499" green="0.54934959997606825" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" red="0.9879181981086731" green="0.99617189168930054" blue="0.99605172872543335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornorRadius">
-                                                <real key="value" value="100"/>
+                                                <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -51,10 +58,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4R4-AJ-8pH" firstAttribute="top" secondItem="6BX-hr-n1L" secondAttribute="bottom" id="0QB-fu-Rfq"/>
                             <constraint firstItem="XpN-ME-EFN" firstAttribute="leading" secondItem="JZv-pd-AsF" secondAttribute="leadingMargin" constant="12" id="7Bf-ER-Dkd"/>
+                            <constraint firstItem="6BX-hr-n1L" firstAttribute="top" secondItem="JZv-pd-AsF" secondAttribute="top" constant="-32" id="A3R-yl-A32"/>
+                            <constraint firstItem="6BX-hr-n1L" firstAttribute="leading" secondItem="JZv-pd-AsF" secondAttribute="leading" id="CbB-sC-76H"/>
                             <constraint firstItem="4R4-AJ-8pH" firstAttribute="top" secondItem="XpN-ME-EFN" secondAttribute="bottom" constant="8" symbolic="YES" id="EZl-Bx-H0K"/>
                             <constraint firstItem="bdO-Mf-Ey7" firstAttribute="top" secondItem="zvF-8t-AXg" secondAttribute="bottom" id="L8P-C9-1f3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XpN-ME-EFN" secondAttribute="trailing" constant="11" id="X3s-7o-ISY"/>
+                            <constraint firstAttribute="trailing" secondItem="6BX-hr-n1L" secondAttribute="trailing" constant="-23" id="eJ7-Fo-Dn2"/>
                         </constraints>
                     </view>
                     <connections>
@@ -63,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HGT-GU-jNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2497" y="-987"/>
+            <point key="canvasLocation" x="-2493.5999999999999" y="-987.25637181409309"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="UZ5-2g-EDb">
@@ -87,13 +98,20 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Okm-Nl-bx4">
                                         <rect key="frame" x="0.0" y="0.0" width="338" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6L-Pt-OMX">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhI-UE-b1d">
                                                 <rect key="frame" x="0.0" y="0.0" width="109.5" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="1" green="0.16951592900000001" blue="0.20408602640000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQs-n7-HoE">
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-1" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="-25" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Menu" image="mene">
+                                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="openMenu:" destination="3vp-U5-UDV" eventType="touchUpInside" id="hw2-Rk-GQ2"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6L-Pt-OMX">
                                                 <rect key="frame" x="114.5" y="0.0" width="109" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.16951592900000001" blue="0.20408602640000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -108,71 +126,31 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="kK5-b9-rCR" customClass="PlayerPanelView" customModule="Hangman" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="31" width="338" height="237.5"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gCg-iy-Op2" customClass="PlayerPanelView" customModule="Hangman" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="269.5" width="338" height="346.5"/>
+                                    <view userInteractionEnabled="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gCg-iy-Op2" customClass="PlayerPanelView" customModule="Hangman" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="31" width="338" height="361"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
+                                    <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="kK5-b9-rCR" customClass="PlayerPanelView" customModule="Hangman" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="393" width="338" height="248"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MbJ-dz-ZEB">
-                                        <rect key="frame" x="0.0" y="617" width="338" height="25"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Krp-Mb-eae" customClass="roundButton" customModule="Hangman" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.5" height="25"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" image="Restart"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornorRadius">
-                                                        <real key="value" value="40"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="restartClicked:" destination="3vp-U5-UDV" eventType="touchUpInside" id="GGe-10-n8U"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EO-7b-yrY" customClass="roundButton" customModule="Hangman" customModuleProvider="target">
-                                                <rect key="frame" x="171.5" y="0.0" width="166.5" height="25"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" image="quit"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <real key="value" value="0.0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornorRadius">
-                                                        <real key="value" value="40"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="ButtonClicked:" destination="3vp-U5-UDV" eventType="touchUpInside" id="VNm-9V-QlJ"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
+                                        <rect key="frame" x="0.0" y="642" width="338" height="0.0"/>
                                     </stackView>
                                 </subviews>
                             </stackView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3FJ-3N-hvz">
-                                <rect key="frame" x="0.0" y="0.0" width="406" height="621"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="l43-QR-9B3">
-                                    <rect key="frame" x="0.0" y="0.0" width="406" height="621"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58b-qN-xgG">
-                                            <rect key="frame" x="0.0" y="0.0" width="406" height="621"/>
+                                            <rect key="frame" x="0.0" y="8" width="309" height="667"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="UdN-Kh-GZM">
-                                                <rect key="frame" x="0.0" y="0.0" width="406" height="621"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="309" height="667"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
                                             <vibrancyEffect>
@@ -187,14 +165,15 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DoY-jF-yvd" firstAttribute="top" secondItem="3FJ-3N-hvz" secondAttribute="bottom" constant="46" id="2vM-93-NXQ"/>
+                            <constraint firstItem="3FJ-3N-hvz" firstAttribute="leading" secondItem="fIR-JX-3SJ" secondAttribute="leading" id="AAa-Ym-ATO"/>
                             <constraint firstItem="JCT-UP-aMp" firstAttribute="top" secondItem="g68-rN-ewl" secondAttribute="bottom" id="B5j-Rb-hN8"/>
-                            <constraint firstItem="3FJ-3N-hvz" firstAttribute="top" secondItem="fIR-JX-3SJ" secondAttribute="top" id="H8k-cI-ucq"/>
-                            <constraint firstAttribute="trailing" secondItem="3FJ-3N-hvz" secondAttribute="trailing" constant="-31" id="LyG-Hm-Xt4"/>
+                            <constraint firstItem="DoY-jF-yvd" firstAttribute="top" secondItem="3FJ-3N-hvz" secondAttribute="bottom" id="Jup-VO-TrV"/>
                             <constraint firstItem="JCT-UP-aMp" firstAttribute="leading" secondItem="fIR-JX-3SJ" secondAttribute="leadingMargin" constant="5" id="Qa0-C1-BfS"/>
+                            <constraint firstAttribute="trailing" secondItem="3FJ-3N-hvz" secondAttribute="trailing" id="Qcq-2U-vMf"/>
+                            <constraint firstItem="DoY-jF-yvd" firstAttribute="top" secondItem="3FJ-3N-hvz" secondAttribute="bottom" id="Rkc-4q-u3R"/>
                             <constraint firstItem="DoY-jF-yvd" firstAttribute="top" secondItem="JCT-UP-aMp" secondAttribute="bottom" constant="5" id="XvL-AF-hkv"/>
-                            <constraint firstItem="3FJ-3N-hvz" firstAttribute="leading" secondItem="fIR-JX-3SJ" secondAttribute="leading" id="ZIr-oC-2hf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JCT-UP-aMp" secondAttribute="trailing" id="dkg-xT-0Oj"/>
-                            <constraint firstAttribute="trailing" secondItem="3FJ-3N-hvz" secondAttribute="trailing" constant="-31" id="gRo-vM-Qvu"/>
+                            <constraint firstItem="3FJ-3N-hvz" firstAttribute="top" secondItem="fIR-JX-3SJ" secondAttribute="top" id="joM-t0-atr"/>
                         </constraints>
                     </view>
                     <connections>
@@ -202,10 +181,64 @@
                         <outlet property="aiPanelView" destination="gCg-iy-Op2" id="XJh-Lq-kd7"/>
                         <outlet property="gameStateView" destination="U6L-Pt-OMX" id="XU8-xc-fjO"/>
                         <outlet property="humanPanelView" destination="kK5-b9-rCR" id="Nn3-OO-Bko"/>
+                        <outlet property="optionItemView" destination="2Tx-d5-j0f" id="7Z1-dn-n5m"/>
                         <outlet property="visualEffectView" destination="3FJ-3N-hvz" id="lcO-G3-tYo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nrF-wj-rC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="2Tx-d5-j0f">
+                    <rect key="frame" x="0.0" y="0.0" width="297" height="202"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EO-7b-yrY" customClass="roundButton" customModule="Hangman" customModuleProvider="target">
+                            <rect key="frame" x="172" y="51" width="100" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <inset key="titleEdgeInsets" minX="0.0" minY="26" maxX="30" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="-31" maxY="25"/>
+                            <state key="normal" title="Quit" image="quit"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="3"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornorRadius">
+                                    <real key="value" value="50"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="ButtonClicked:" destination="3vp-U5-UDV" eventType="touchUpInside" id="VNm-9V-QlJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Krp-Mb-eae" customClass="roundButton" customModule="Hangman" customModuleProvider="target">
+                            <rect key="frame" x="22" y="51" width="100" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <inset key="titleEdgeInsets" minX="0.0" minY="18" maxX="22" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="37" minY="-26" maxX="1" maxY="1"/>
+                            <state key="normal" title="retry" image="Restart"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="3"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornorRadius">
+                                    <real key="value" value="50"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="restartClicked:" destination="3vp-U5-UDV" eventType="touchUpInside" id="GGe-10-n8U"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" red="0.99150568246841431" green="0.0094950087368488312" blue="0.31059572100639343" alpha="0.71346768465909094" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
                 <view contentMode="scaleToFill" id="32K-pl-uZg">
                     <rect key="frame" x="0.0" y="0.0" width="309" height="187"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -254,7 +287,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zfu-6v-FnA">
                                 <rect key="frame" x="21" y="28" width="333" height="631"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="40CA0846-BD71-4195-9618-C81B240036A1" highlightedImage="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="kIL-cx-vcL">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="73AFE6BF-AD01-41F8-97B0-E896B7799BB4" highlightedImage="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="kIL-cx-vcL">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="86"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80064747431506844" colorSpace="custom" customColorSpace="sRGB"/>
                                         <variation key="heightClass=regular-widthClass=compact" image="logo.png"/>
@@ -562,7 +595,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="40CA0846-BD71-4195-9618-C81B240036A1" width="512" height="512">
+        <image name="73AFE6BF-AD01-41F8-97B0-E896B7799BB4" width="512" height="512">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBMU
 GR4fJSYsLzU4VSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBz

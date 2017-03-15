@@ -11,6 +11,7 @@ import UIKit
 
 class GameViewController: UIViewController, UIPopoverPresentationControllerDelegate, WordPickerViewControllerDelegate, PlayerPanelViewDelegate {
     
+    @IBOutlet var optionItemView: UIView!
     @IBOutlet var addItemView: UIView!
     @IBOutlet weak var visualEffectView: UIVisualEffectView!
     var effect: UIVisualEffect!
@@ -24,6 +25,7 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
         effect = visualEffectView.effect
         visualEffectView.effect = nil
         addItemView.layer.cornerRadius = 5
+        optionItemView.layer.cornerRadius =  5
         
         visualEffectView.isUserInteractionEnabled=false
         // Do any additional setup after loading the view, typically from a nib.
@@ -36,6 +38,21 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
         
     }
     
+    @IBAction func openMenu(_ sender: Any) {
+        self.view.addSubview(optionItemView)
+        optionItemView.center = self.view.center
+        
+        optionItemView.transform = CGAffineTransform.init(scaleX: 1.3, y:1.3)
+        optionItemView.alpha=0
+        UIView.animate(withDuration: 0.4){
+            self.visualEffectView.effect = self.effect
+            self.optionItemView.alpha = 1
+            self.optionItemView.transform = CGAffineTransform.identity
+        }
+        
+        self.visualEffectView.isUserInteractionEnabled = true
+        
+    }
     func popupAnimationIn(){
         self.view.addSubview(addItemView)
         addItemView.center = self.view.center
@@ -54,6 +71,18 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
         
     }
     
+    func closeMenuView()
+    {
+        UIView.animate(withDuration: 0.3, animations:{
+            self.optionItemView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.optionItemView.alpha = 0
+            self.visualEffectView.effect = nil
+        }) { (success: Bool) in
+            self.optionItemView.removeFromSuperview()
+            
+        }
+        self.visualEffectView.isUserInteractionEnabled = false
+    }
     
     func popupAnimationOut(){
         UIView.animate(withDuration: 0.3, animations:{
@@ -90,6 +119,7 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
     }
 
     @IBAction func ButtonClicked(_ sender: Any) {
+       closeMenuView()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -152,6 +182,7 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
     
     @IBAction func restartClicked(_ sender: UIButton) {
         wordChosen = false
+        closeMenuView()
         chooseWord()
     }
     

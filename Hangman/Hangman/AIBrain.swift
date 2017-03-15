@@ -34,14 +34,14 @@ class AIBrain {
     }
     
     func getLetter() -> Character {
+        //return getRandomLetter()
         actrAI.run()
-        //print(actrAI.lastAction("choice2"))
         return actrAI.lastAction("choice")!.characters.first!
     }
     
     func setFeedback(value: String, gameEnd: String) {
-        actrAI.modifyLastAction(slot: "feedback", value: value)
-        actrAI.modifyLastAction(slot: "IfGameOver", value: gameEnd)
+        //actrAI.modifyLastAction(slot: "feedback", value: value)
+        //actrAI.modifyLastAction(slot: "IfGameOver", value: gameEnd)
     }
     
 }

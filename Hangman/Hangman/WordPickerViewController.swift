@@ -52,6 +52,11 @@ class WordPickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = pickerData[row]
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.white])
+        return myTitle
+    }
     
     @IBAction func doneClicked(_ sender: UIButton) {
         if let del = delegate {
@@ -59,7 +64,7 @@ class WordPickerViewController: UIViewController, UIPickerViewDelegate, UIPicker
         }
         self.dismiss(animated: true, completion: nil)
     }
-
+    
     /*
     // MARK: - Navigation
 
