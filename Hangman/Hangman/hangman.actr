@@ -96,7 +96,7 @@
 )
 
 
-(p check-right
+(p reinforce-right-guess
      =goal>
         isa goal
         state check-if-right
@@ -110,6 +110,7 @@
          value =decision
          used true
      -imaginal>
+     -action
 
 )
 
