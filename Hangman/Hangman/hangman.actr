@@ -49,8 +49,8 @@
 
 (p retrieve-letter
    =goal>
-     isa goal
-     state guess_letter
+        isa goal
+        state guess_letter
 
 ==>
    =goal>
@@ -69,12 +69,61 @@
         value =decision
 ==>
     =goal>
-        state modify-chunks
+        state recording-result
+        letteris =decision
     =retrieval>
         used true
     +action>
         isa move
         choice =decision
+)
+
+(p get-feedback
+     =goal>
+         isa goal
+         state recording-result
+         letteris =decision
+     =action>
+         isa move
+         feedback =result
+
+==>
+     =goal>
+         isa goal
+         state check-if-right
+         ifLastLetterGood =result
+         letteris =decision
+)
+
+
+(p check-right
+     =goal>
+        isa goal
+        state check-if-right
+        ifLastLetterGood right
+        letteris =decision
+==>
+     =goal>
+         isa goal
+         state modify-chunks
+     +imaginal>
+         value =decision
+         used true
+     -imaginal>
+
+)
+
+
+(p ignore-wrong-guess
+     =goal>
+         isa goal
+         state check-if-right
+         ifLastLetterGood wrong
+==>
+     =goal>
+         isa goal
+         state modify-chunks
+     -action>
 )
 
 (p modify-chunks
@@ -84,54 +133,8 @@
 ==>
      -retrieval>
      =goal>
-         isa goal
-         state recording-result
-)
-
-(p get-feedback
-     =goal>
-         isa goal
-         state recording-result
-     =action>
-         isa move
-         feedback =result
-==>
-     =goal>
-         isa goal
-         state reinforce-right-guess
-         ifLastLetterGood =result
-)
-
-
-(p reinforce-guess
-     =goal>
         isa goal
-        state reinforce-right-guess
-        ifLastLetterGood right
-     ?imaginal>
-        state free
-
-==>
-     =goal>
-         isa goal
-         state guess_letter
-     +imaginal>
-         value =deciison
-         used true
-)
-
-(p ignore-wrong-guess
-     =goal>
-         isa goal
-         state reinforce-right-guess
-         ifLastLetterGood wrong
-==>
-     =goal>
-         isa goal
-         state guess_letter
-)
-
-
+        state guess_letter)
 
 
 
