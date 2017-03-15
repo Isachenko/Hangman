@@ -1,2 +1,1 @@
-# Hangman
-Hangman game implementation with ACT-R
+# Hangman Hirad Changing it 
