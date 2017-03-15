@@ -47,6 +47,7 @@
 
 ;; At the start of the model, retrieve any decision
 
+
 (p retrieve-letter
    =goal>
         isa goal
@@ -86,7 +87,8 @@
     -retrieval>
     =goal>
         isa goal
-        state recording-result)
+        state recording-result
+)
 
 
 (p get-feedback
@@ -97,6 +99,7 @@
      =action>
          isa move
          feedback =result
+         ifgameover =ifend
 
 ==>
      =goal>
@@ -104,6 +107,7 @@
          state check-if-right
          ifLastLetterGood =result
          letteris =decision
+         gameover =ifend
 )
 
 
@@ -113,10 +117,12 @@
         state check-if-right
         ifLastLetterGood right
         letteris =decision
+        gameover =ifend
 ==>
      =goal>
          isa goal
          state clear-imaginal
+         ifgameover =ifend
      +imaginal>
          value =decision
          used true
@@ -127,12 +133,13 @@
      =goal>
         isa goal
         state clear-imaginal
+        gameover =ifend
 ==>
     -imaginal>
     =goal>
         isa goal
-        state guess_letter
-)
+        state get-gameover-result
+        gameover =ifend)
 
 
 (p ignore-wrong-guess
@@ -140,13 +147,38 @@
          isa goal
          state check-if-right
          ifLastLetterGood wrong
+         ifgameover =ifend
 ==>
      =goal>
          isa goal
-         state guess_letter
+         state get-gameover-result
+         gameover =ifend
+)
+
+
+
+(p if-gameover
+    =goal>
+        isa goal
+        state get-gameover-result
+        gameover yes
+==>
+    =goal>
+        isa goal
+        state guess_letter
+)
+
+(p if-gameover
+    =goal>
+        isa goal
+        state get-gameover-result
+        gameover no
+==>
+    =goal>
+        isa goal
+        state guess_letter
+
 )
 
 
 (goal-focus goal)
-
-
