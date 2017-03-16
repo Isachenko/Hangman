@@ -10,7 +10,6 @@
 		1C456CB81E7050E300839220 /* red_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C456CB41E7050E300839220 /* red_heart.png */; };
 		1C456CB91E7050E300839220 /* grey_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C456CB51E7050E300839220 /* grey_heart.png */; };
 		1C456CBA1E7050E300839220 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C456CB61E7050E300839220 /* background.jpg */; };
-		1C456CBB1E7050E300839220 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C456CB71E7050E300839220 /* logo.png */; };
 		1C456CBF1E705F5300839220 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C456CBE1E705F5300839220 /* TutorialViewController.swift */; };
 		6ACD15F71E7690D20054E73C /* hangman.actr in Resources */ = {isa = PBXBuildFile; fileRef = 6ACD15F61E7690D20054E73C /* hangman.actr */; };
 		6ACD15F91E7803000054E73C /* Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6ACD15F81E7803000054E73C /* Words.txt */; };
@@ -49,7 +48,6 @@
 		1C456CB41E7050E300839220 /* red_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_heart.png; sourceTree = "<group>"; };
 		1C456CB51E7050E300839220 /* grey_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grey_heart.png; sourceTree = "<group>"; };
 		1C456CB61E7050E300839220 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		1C456CB71E7050E300839220 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		1C456CBE1E705F5300839220 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		6ACD15F61E7690D20054E73C /* hangman.actr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hangman.actr; sourceTree = "<group>"; };
 		6ACD15F81E7803000054E73C /* Words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Words.txt; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				6ACD15F81E7803000054E73C /* Words.txt */,
 				1C456CB51E7050E300839220 /* grey_heart.png */,
 				1C456CB61E7050E300839220 /* background.jpg */,
-				1C456CB71E7050E300839220 /* logo.png */,
 				6AFFC7781E59AC6700C7E487 /* AppDelegate.swift */,
 				6AFFC77F1E59AC6700C7E487 /* Assets.xcassets */,
 				6AFFC7811E59AC6700C7E487 /* LaunchScreen.storyboard */,
@@ -258,7 +255,6 @@
 				1C456CB81E7050E300839220 /* red_heart.png in Resources */,
 				6ACD15F91E7803000054E73C /* Words.txt in Resources */,
 				1C456CBA1E7050E300839220 /* background.jpg in Resources */,
-				1C456CBB1E7050E300839220 /* logo.png in Resources */,
 				1C456CB91E7050E300839220 /* grey_heart.png in Resources */,
 				6ACD15F71E7690D20054E73C /* hangman.actr in Resources */,
 				6AFFC7801E59AC6700C7E487 /* Assets.xcassets in Resources */,

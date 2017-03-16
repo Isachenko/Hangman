@@ -20,7 +20,9 @@ class KeyboardView: UIView {
     var firstLineLetters = "QWERTYUIOP"
     var secondLineLetters = "ASDFGHJKL"
     var thirdLineLetters = "ZXCVBNM"
-    var hightlightedLetters = ""
+    var goodLetters = ""
+    var badLetters = ""
+    var letterToButton = [Character: UIButton]()
     
     //override init(){
     //    super.init()
@@ -42,12 +44,12 @@ class KeyboardView: UIView {
             let button = UIButton(type: .system)
             //button.backgroundColor = .
             button.setTitle(String(letter), for: .normal)
-            button.setTitleColor(UIColor.black, for: .normal)
             button.setTitle(String(letter), for: UIControlState.normal)
             buttonArray += [button]
             button.addTarget(self, action: #selector(KeyboardView.letterClicked(_:)), for: .touchUpInside)
             button.backgroundColor = UIColor.black
             button.setTitleColor(UIColor.white, for: UIControlState.normal)
+            letterToButton[letter] = button
         }
         return buttonArray
     }
@@ -64,8 +66,6 @@ class KeyboardView: UIView {
     }
     
     private func addComponents() {
-        
-        print("hi")
         
         //let segmentedControl = UISegmentedControl(items: ["Tweets", "Media", "Likes"])
         //self.addSubview(segmentedControl)
@@ -90,5 +90,20 @@ class KeyboardView: UIView {
     
     func letterClicked(_ sender: UIButton?) {
         delegate?.letterClicked(letter: (sender?.currentTitle)!.characters.first!)
+    }
+    
+    func hightlightLetter(letter: Character, good: Bool) {
+        let uppercasedletter = String(letter).uppercased().characters.first
+        let button = letterToButton[uppercasedletter!]!
+        if good {            button.setTitleColor(UIColor.green, for: .normal)
+        } else {
+            button.setTitleColor(UIColor.red, for: .normal)
+        }
+    }
+    
+    func resetHightlights() {
+        for button in letterToButton.values{
+            button.setTitleColor(UIColor.white, for: .normal)
+        }
     }
 }

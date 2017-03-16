@@ -155,9 +155,25 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
     }
     
     func letterClicked(letter: Character) {
-        currentGameModel.humanTryLetter(letter: letter)
+        let humanTryResult = currentGameModel.humanTryLetter(letter: letter)
         updateCurGameStateView()
-        currentGameModel.aiTryLetter()
+        let aiTryTuple = currentGameModel.aiTryLetter()
+        
+        if (humanTryResult != .error) {
+            if (humanTryResult == .rightLetter) {
+                humanPanelView.hightlightLetter(letter: letter, good: true)
+            } else {
+                humanPanelView.hightlightLetter(letter: letter, good: false)
+            }
+        }
+        if (aiTryTuple.1 != .error) {
+            if (aiTryTuple.1 == .rightLetter) {
+                aiPanelView.hightlightLetter(letter: aiTryTuple.0, good: true)
+            } else {
+                aiPanelView.hightlightLetter(letter: aiTryTuple.0, good: false)
+            }
+        }
+        
         updateViews()
     }
     
@@ -188,6 +204,8 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
     
     func chooseWord() {
         currentGameModel.gameState = .wordChosing
+        aiPanelView.resetHightlights()
+        humanPanelView.resetHightlights()
         showWordsList()
     }
 }

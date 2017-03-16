@@ -89,5 +89,14 @@ class PlayerPanelView: UIView, KeyboardDelegate {
     func letterClicked(letter: Character) {
         delegate?.letterClicked(letter: letter)
     }
+    
+    func hightlightLetter(letter: Character, good: Bool) {
+        keyboardView.hightlightLetter(letter: letter, good: good)
+    }
+    
+    
+    func resetHightlights() {
+        keyboardView.resetHightlights()
+    }
 
 }

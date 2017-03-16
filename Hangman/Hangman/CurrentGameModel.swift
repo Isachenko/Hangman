@@ -79,7 +79,7 @@ class CurrentGameModel {
         }
     }
     
-    func humanTryLetter(letter: Character){
+    func humanTryLetter(letter: Character) -> PlayerInfo.tryLetterResult{
         if (gameState == .humanTurn) {
             let result = human.tryLetter(letter: String(letter).lowercased().characters.first!)
             switch result {
@@ -93,10 +93,12 @@ class CurrentGameModel {
                 gameState = .aiTurn
             }
             checkForGameEnd()
+            return result
         }
+        return .error
     }
     
-    func aiTryLetter(){
+    func aiTryLetter() -> (Character, PlayerInfo.tryLetterResult) {
         if (gameState == .aiTurn) {
             let letter = aiBrain.getLetter()
             let result = ai.tryLetter(letter: letter)
@@ -119,7 +121,9 @@ class CurrentGameModel {
                 gameEnd = "yes"
             }
             aiBrain.setFeedback(value: feedback, gameEnd: gameEnd)
+            return (letter, result)
         }
+        return ("x", .error)
     }
     
     func checkForGameEnd() {
