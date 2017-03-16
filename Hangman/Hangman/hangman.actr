@@ -122,7 +122,7 @@
      =goal>
          isa goal
          state clear-imaginal
-         ifgameover =ifend
+         gameover =ifend
      +imaginal>
          value =decision
          used true
@@ -147,7 +147,7 @@
          isa goal
          state check-if-right
          ifLastLetterGood wrong
-         ifgameover =ifend
+         gameover =ifend
 ==>
      =goal>
          isa goal
