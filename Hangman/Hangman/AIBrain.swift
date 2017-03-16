@@ -39,9 +39,20 @@ class AIBrain {
         return actrAI.lastAction("choice")!.characters.first!
     }
     
-    func setFeedback(value: String, gameEnd: String) {
+    func setFeedback(value: String, gameEnd: Bool) {
         actrAI.modifyLastAction(slot: "feedback", value: value)
-        actrAI.modifyLastAction(slot: "ifgameover", value: gameEnd)
+        if (gameEnd){
+            for (key) in actrAI.dm.chunks {
+                if (key.key.characters.first!.description == "L"){
+                    actrAI.dm.chunks[key.key]?.setSlot(slot: "used", value: "false")
+                    print(key.key)
+                    print(actrAI.dm.chunks[key.key]?.activation() ?? "A")
+                    print(actrAI.dm.chunks[key.key]?.baseLevelActivation() ?? "Q")
+                    
+                }
+            }
+        }
+
     }
     
 }

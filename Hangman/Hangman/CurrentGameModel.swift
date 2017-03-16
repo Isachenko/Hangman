@@ -116,9 +116,9 @@ class CurrentGameModel {
                 gameState = .humanTurn
             }
             checkForGameEnd()
-            var gameEnd = "no"
+            var gameEnd = false
             if (gameState == .aiJustWon) || (gameState == .humanJustWon) {
-                gameEnd = "yes"
+                gameEnd = true
             }
             aiBrain.setFeedback(value: feedback, gameEnd: gameEnd)
             return (letter, result)
