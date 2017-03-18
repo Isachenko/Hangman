@@ -110,17 +110,18 @@ class CurrentGameModel {
                 print("ai: right letter \(letter)")
                 feedback = "right"
                 gameState = .humanTurn
+                aiBrain.memorizeLetter(letter: letter)
             case .wrongLetter:
                 print("ai: wrong letter \(letter)")
                 feedback = "wrong"
                 gameState = .humanTurn
             }
             checkForGameEnd()
-            var gameEnd = false
             if (gameState == .aiJustWon) || (gameState == .humanJustWon) {
-                gameEnd = true
+                aiBrain.restoreChunkUsedValue()
+                aiBrain.storePreviousGamesChunks()
             }
-            aiBrain.setFeedback(value: feedback, gameEnd: gameEnd)
+            aiBrain.setFeedback(value: feedback)
             return (letter, result)
         }
         return ("x", .error)
