@@ -68,6 +68,11 @@ class AIBrain {
     
     func setFeedback(value: String) {
         actrAI.modifyLastAction(slot: "feedback", value: value)
+        //if (gameEnd) {
+        //    storePreviousGamesChunks()
+        //    restoreChunkUsedValue()
+        //}
+        
     }
     
     func restoreChunkUsedValue(){
@@ -98,7 +103,6 @@ class AIBrain {
     }
     
     func chargeMemoryPreviousGamesInActr(){
-        
         if ( UserDefaults.standard.value(forKey: "previousGames") != nil){
             historyChunks = UserDefaults.standard.value(forKey: "previousGames")! as? [String : Int] ?? [String : Int]()
         }

@@ -155,10 +155,8 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
     }
     
     func letterClicked(letter: Character) {
+        // player make move
         let humanTryResult = currentGameModel.humanTryLetter(letter: letter)
-        updateCurGameStateView()
-        let aiTryTuple = currentGameModel.aiTryLetter()
-        
         if (humanTryResult != .error) {
             if (humanTryResult == .rightLetter) {
                 humanPanelView.hightlightLetter(letter: letter, good: true)
@@ -166,16 +164,32 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
                 humanPanelView.hightlightLetter(letter: letter, good: false)
             }
         }
-        if (aiTryTuple.1 != .error) {
-            if (aiTryTuple.1 == .rightLetter) {
-                aiPanelView.hightlightLetter(letter: aiTryTuple.0, good: true)
-            } else {
-                aiPanelView.hightlightLetter(letter: aiTryTuple.0, good: false)
+        updateCurGameStateView()
+        updateViews()
+        
+        // ai make move
+        if (currentGameModel.isGameEnd()) {
+            currentGameModel.resetAiforNewTurn()
+        } else {
+            let aiTryTuple = currentGameModel.aiTryLetter()
+            if (aiTryTuple.1 != .error) {
+                if (aiTryTuple.1 == .rightLetter) {
+                    aiPanelView.hightlightLetter(letter: aiTryTuple.0, good: true)
+                } else {
+                    aiPanelView.hightlightLetter(letter: aiTryTuple.0, good: false)
+                }
             }
+            
+        }
+        if (currentGameModel.isGameEnd()) {
+            currentGameModel.resetAiforNewTurn()
         }
         
+        
+        updateCurGameStateView()
         updateViews()
     }
+    
     
     func updateViews() {
         updateWordsViews()

@@ -118,6 +118,7 @@ letteris =decision
 isa goal
 state clear-imaginal
 +imaginal>
+isa letter
 value =decision
 used true
 

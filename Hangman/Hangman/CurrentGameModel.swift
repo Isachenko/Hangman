@@ -117,14 +117,15 @@ class CurrentGameModel {
                 gameState = .humanTurn
             }
             checkForGameEnd()
-            if (gameState == .aiJustWon) || (gameState == .humanJustWon) {
-                aiBrain.restoreChunkUsedValue()
-                aiBrain.storePreviousGamesChunks()
-            }
             aiBrain.setFeedback(value: feedback)
             return (letter, result)
         }
         return ("x", .error)
+    }
+    
+    func resetAiforNewTurn() {
+        aiBrain.storePreviousGamesChunks()
+        aiBrain.restoreChunkUsedValue()
     }
     
     func checkForGameEnd() {
@@ -133,6 +134,10 @@ class CurrentGameModel {
         } else if (ai.curlife == 0 || human.wordFinished) {
             gameState = .humanJustWon
         }
+    }
+    
+    func isGameEnd() -> Bool{
+        return (gameState == .aiJustWon) || (gameState == .humanJustWon)
     }
     
     func reset() {

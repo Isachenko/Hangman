@@ -88,6 +88,7 @@ Set the baselevel of a chunk
             self.references = references
         } else {
             let increment = -timeDiff / Double(references)
+            //referenceList = [Double]()
             for i in 0..<references {
                 let referenceTime = creationTime! + Double(i) * increment
               referenceList.append(referenceTime)
@@ -111,7 +112,8 @@ Set the baselevel of a chunk
             let y = model.dm.baseLevelDecay + log(model.time - creationTime!)
             return x - y
         } else {
-            return log(self.referenceList.map{ pow((self.model.time - $0),(-self.model.dm.baseLevelDecay))}.reduce(0.0, + )) // Wew! almost lisp! This is the standard baselevel equation
+            let rerun_value = log(self.referenceList.map{ pow((self.model.time - $0),(-self.model.dm.baseLevelDecay))}.reduce(0.0, + )) // Wew! almost lisp! This is the standard baselevel equation
+            return rerun_value
         }
     }
     
@@ -230,7 +232,8 @@ Set the baselevel of a chunk
                     totalSlots += 1
                 default: break
                 }
-                return (totalSlots==0 ? 0 : totalSji * (model.dm.goalActivation / Double(totalSlots)))
+                let retunr_value = (totalSlots==0 ? 0 : totalSji * (model.dm.goalActivation / Double(totalSlots)))
+                return retunr_value
             }
         }
         return 0
