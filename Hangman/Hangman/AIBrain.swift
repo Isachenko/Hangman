@@ -68,11 +68,6 @@ class AIBrain {
     
     func setFeedback(value: String) {
         actrAI.modifyLastAction(slot: "feedback", value: value)
-        //if (gameEnd) {
-        //    storePreviousGamesChunks()
-        //    restoreChunkUsedValue()
-        //}
-        
     }
     
     func restoreChunkUsedValue(){
@@ -87,13 +82,8 @@ class AIBrain {
         }
     }
     func memorizeLetter(letter: Character){
-        print("memoriza")
-        let a1 = letter
-        let a2 = a1.description.capitalized
-        let b = "L"
-        var c = ""
-        c = b + a2
-        historyChunks[c] = historyChunks[c]!+1
+        let aux = "L" + letter.description.capitalized
+        historyChunks[aux] = historyChunks[aux]!+1
         print(historyChunks)
         
     }

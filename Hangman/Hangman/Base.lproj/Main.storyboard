@@ -287,7 +287,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zfu-6v-FnA">
                                 <rect key="frame" x="21" y="28" width="333" height="631"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="74DB7643-23E1-4169-B10B-067B2E6DC457" highlightedImage="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="kIL-cx-vcL">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B0CD800D-97EF-46DC-8EDB-B97CBEFEE312" highlightedImage="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="kIL-cx-vcL">
                                         <rect key="frame" x="0.0" y="0.0" width="333" height="86"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80064747431506844" colorSpace="custom" customColorSpace="sRGB"/>
                                         <variation key="heightClass=regular-widthClass=compact" image="logo.png"/>
@@ -595,7 +595,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="74DB7643-23E1-4169-B10B-067B2E6DC457" width="512" height="512">
+        <image name="B0CD800D-97EF-46DC-8EDB-B97CBEFEE312" width="512" height="512">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBMU
 GR4fJSYsLzU4VSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBz
