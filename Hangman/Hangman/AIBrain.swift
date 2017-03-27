@@ -73,10 +73,10 @@ class AIBrain {
     }
     
     
-    func setFeedback(value: String, enoughtLettersToGuessed: Bool, firsLetterKnown: Bool, firstLetter: String, wordSize: String) {
+    func setFeedback(value: String, enoughtLettersToGuessed: Bool, firstLetterKnown: Bool, firstLetter: String, wordSize: String) {
         actrAI.modifyLastAction(slot: "feedback", value: value)
         actrAI.modifyLastAction(slot: "enoughtLettersToGuessed", value: String(enoughtLettersToGuessed) )
-        actrAI.modifyLastAction(slot: "firsLetterKnown", value: String(firsLetterKnown))
+        actrAI.modifyLastAction(slot: "firstLetterKnown", value: String(firstLetterKnown))
         actrAI.modifyLastAction(slot: "firstLetter", value: firstLetter)
         actrAI.modifyLastAction(slot: "wordSize", value: wordSize)
     }

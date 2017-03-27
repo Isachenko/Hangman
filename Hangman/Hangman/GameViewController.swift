@@ -186,6 +186,8 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
         }
         if (currentGameModel.isFirstletterGuessed() == true){
             print(currentGameModel.aiBrain.getGuessWord())
+            
+            // if ( currentGameModel.aiBrain.getGuessWord() == currentGameModel.ai.word{print("Voila")}
         }
         
         updateCurGameStateView()

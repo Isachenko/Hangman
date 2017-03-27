@@ -91,20 +91,30 @@ state recording-result)
 
 (p get-feedback
 =goal>
-isa goal
-state recording-result
-letteris =decision
+    isa goal
+    state recording-result
+    letteris =decision
 =action>
-isa move
-feedback =result
+    isa move
+    feedback =result
+    firstLetter =firstLetter
+    firstLetterKnown =firstLetterKnown
+    wordSize =wordSize
+
+
+
 
 ==>
 =goal>
 isa goal
-state check-if-right
-ifLastLetterGood =result
-letteris =decision
-)
+    state check-if-right
+    ifLastLetterGood =result
+    letteris =decision
+    firstLetter =firstLetter
+    firstLetterKnown =firstLetterKnown
+    wordSize =wordSize
+
+   )
 
 
 (p reinforce-right-guess
@@ -146,6 +156,7 @@ ifLastLetterGood wrong
 isa goal
 state guess_letter
 )
+
 
 
 (goal-focus goal)
