@@ -184,7 +184,9 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
         if (currentGameModel.isGameEnd()) {
             currentGameModel.resetAiforNewTurn()
         }
-        
+        if (currentGameModel.isFirstletterGuessed() == true){
+            print(currentGameModel.aiBrain.getGuessWord())
+        }
         
         updateCurGameStateView()
         updateViews()

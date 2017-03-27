@@ -66,13 +66,19 @@ class AIBrain {
         return actrAI.lastAction("choice")!.characters.first!
     }
     
+    func getGuessWord() -> String {
+        actrAI.run()
+        return actrAI.lastAction("guessWord")!
+        
+    }
+    
+    
     func setFeedback(value: String, enoughtLettersToGuessed: Bool, firsLetterKnown: Bool, firstLetter: String, wordSize: String) {
         actrAI.modifyLastAction(slot: "feedback", value: value)
         actrAI.modifyLastAction(slot: "enoughtLettersToGuessed", value: String(enoughtLettersToGuessed) )
         actrAI.modifyLastAction(slot: "firsLetterKnown", value: String(firsLetterKnown))
         actrAI.modifyLastAction(slot: "firstLetter", value: firstLetter)
         actrAI.modifyLastAction(slot: "wordSize", value: wordSize)
-
     }
     
     func restoreChunkUsedValue(){
