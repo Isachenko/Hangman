@@ -117,7 +117,7 @@ class CurrentGameModel {
                 gameState = .humanTurn
             }
             checkForGameEnd()
-            aiBrain.setFeedback(value: feedback, enoughtLettersToGuessed: isItenoughtLettersToGuessed(), firsLetterKnown: isFirstletterGuessed(), firstLetter: getTheFirstLetter())
+            aiBrain.setFeedback(value: feedback, enoughtLettersToGuessed: isItenoughtLettersToGuessed(), firsLetterKnown: isFirstletterGuessed(), firstLetter: getTheFirstLetter(), wordSize: wordSize())
             return (letter, result)
         }
         return ("x", .error)
@@ -142,6 +142,23 @@ class CurrentGameModel {
     
     func getTheFirstLetter() -> String{
             return String(describing: ai.word.characters.first!)
+    }
+    
+    func wordSize() -> String{
+        var n = 0
+        for c in ai.word.characters {
+            if c == "_" {
+                n = n + 1
+            }
+        }
+        switch n {
+        case let n where n<5:
+            return("Long")
+        case let n where n>9:
+            return("Short")
+        default:
+            return("extraLong")
+        }
     }
     
     func resetAiforNewTurn() {

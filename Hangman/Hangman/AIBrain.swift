@@ -66,17 +66,12 @@ class AIBrain {
         return actrAI.lastAction("choice")!.characters.first!
     }
     
-    func setFeedback(value: String, enoughtLettersToGuessed: Bool, firsLetterKnown: Bool, firstLetter: String) {
+    func setFeedback(value: String, enoughtLettersToGuessed: Bool, firsLetterKnown: Bool, firstLetter: String, wordSize: String) {
         actrAI.modifyLastAction(slot: "feedback", value: value)
-        
-        // check if it is more then half letters gussed or first letter guest
-        // if it so then try guess worf
-        // actrAI.modifyLastAction(slot: "enoughtLettersToGuessed", value: true)
-        //else
         actrAI.modifyLastAction(slot: "enoughtLettersToGuessed", value: String(enoughtLettersToGuessed) )
-        
         actrAI.modifyLastAction(slot: "firsLetterKnown", value: String(firsLetterKnown))
         actrAI.modifyLastAction(slot: "firstLetter", value: firstLetter)
+        actrAI.modifyLastAction(slot: "wordSize", value: wordSize)
 
     }
     
