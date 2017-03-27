@@ -117,10 +117,28 @@ class CurrentGameModel {
                 gameState = .humanTurn
             }
             checkForGameEnd()
-            aiBrain.setFeedback(value: feedback)
+            aiBrain.setFeedback(value: feedback, enoughtLettersToGuessed: isItenoughtLettersToGuessed(), firsLetterKnown: isFirstletterGuessed())
             return (letter, result)
         }
         return ("x", .error)
+    }
+    
+    func isItenoughtLettersToGuessed() -> Bool{
+        let word = ai.wordHiden
+        let lenght = word.characters.count / 2
+        var n = 0
+        for c in word.characters {
+            if c == "_" {
+                n = n + 1
+            }
+        }
+        print("number of guessed letters ", lenght - n)
+        
+        return (n < (lenght / 2)) 
+    }
+    
+    func isFirstletterGuessed() -> Bool {
+        return ai.wordHiden.characters.first != "_"
     }
     
     func resetAiforNewTurn() {

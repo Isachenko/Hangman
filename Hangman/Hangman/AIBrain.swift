@@ -9,7 +9,7 @@
 import Foundation
 
 class AIBrain {
-    var historyChunks: [String:Int] = [ "LA" : 0,
+    var historyChunks: [String:Int] = [ "LA" : 10,
                                         "LB" : 0,
                                         "LC" : 0,
                                         "LD" : 0,
@@ -22,12 +22,12 @@ class AIBrain {
                                         "LK" : 0,
                                         "LL" : 0,
                                         "LM" : 0,
-                                        "LN" : 0,
+                                        "LN" : 10,
                                         "LO" : 0,
                                         "LP" : 0,
                                         "LQ" : 0,
-                                        "LR" : 0,
-                                        "LS" : 0,
+                                        "LR" : 10,
+                                        "LS" : 10,
                                         "LT" : 0,
                                         "LU" : 0,
                                         "LV" : 0,
@@ -66,8 +66,17 @@ class AIBrain {
         return actrAI.lastAction("choice")!.characters.first!
     }
     
-    func setFeedback(value: String) {
+    func setFeedback(value: String, enoughtLettersToGuessed: Bool, firsLetterKnown: Bool) {
         actrAI.modifyLastAction(slot: "feedback", value: value)
+        
+        // check if it is more then half letters gussed or first letter guest
+        // if it so then try guess worf
+        // actrAI.modifyLastAction(slot: "enoughtLettersToGuessed", value: true)
+        //else
+        actrAI.modifyLastAction(slot: "enoughtLettersToGuessed", value: String(enoughtLettersToGuessed) )
+        
+        actrAI.modifyLastAction(slot: "firsLetterKnown", value: String(firsLetterKnown))
+
     }
     
     func restoreChunkUsedValue(){
