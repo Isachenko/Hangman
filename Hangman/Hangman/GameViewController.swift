@@ -53,12 +53,24 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
         self.visualEffectView.isUserInteractionEnabled = true
         
     }
-    func popupAnimationIn(){
+    @IBAction func quitFromPopUpClicked(_ sender: UIButton) {
+        closePopup(sender)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBOutlet weak var AIWordLabel: UILabel!
+    @IBOutlet weak var HumanWordLabel: UILabel!
+    
+    func showGameEndPopUp(){
+        AIWordLabel.text = "AI word was: " + self.currentGameModel.ai.word
+        HumanWordLabel.text = "Human word was: " + self.currentGameModel.human.word
+        
         self.view.addSubview(addItemView)
         addItemView.center = self.view.center
         
         addItemView.transform = CGAffineTransform.init(scaleX: 1.3, y:1.3)
-        addItemView.alpha = 0
+        addItemView.alpha = 0.0
+        
         
         UIView.animate(withDuration: 0.4){
             self.visualEffectView.effect = self.effect
@@ -108,10 +120,6 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
         }
     }
     
-   
-    @IBAction func test(_ sender: Any) {
-        popupAnimationIn()
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -183,6 +191,7 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
         }
         if (currentGameModel.isGameEnd()) {
             currentGameModel.resetAiforNewTurn()
+            showGameEndPopUp()
         }
         if (currentGameModel.isFirstletterGuessed() == true){
             print(currentGameModel.aiBrain.getGuessWord())
@@ -214,7 +223,17 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
         gameStateView.text = currentGameModel.gameState.rawValue
     }
     
+    @IBOutlet weak var restartButton: UIButton!
+    @IBAction func restartFromPopUpClicked(_ sender: UIButton) {
+        restartGame()
+        closePopup(sender)
+    }
+    
     @IBAction func restartClicked(_ sender: UIButton) {
+        restartGame()
+    }
+    
+    func restartGame() {
         wordChosen = false
         closeMenuView()
         chooseWord()

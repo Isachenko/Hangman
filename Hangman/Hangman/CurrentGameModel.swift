@@ -44,12 +44,12 @@ class CurrentGameModel {
     }
     
     enum GameState : String{
-        case wordChosing = "word picking"
-        case humanTurn = "human turn"
-        case aiTurn = "ai turn"
-        case aiJustWon = "ai won"
-        case humanJustWon = "human won"
-        case stoped = "game stoped"
+        case wordChosing = "Word picking"
+        case humanTurn = "Human turn"
+        case aiTurn = "AI turn"
+        case aiJustWon = "AI won"
+        case humanJustWon = "Human won"
+        case stoped = "Game stoped"
     }
     
     var gameState = GameState.stoped
