@@ -141,15 +141,15 @@ class CurrentGameModel {
     }
     
     func getTheFirstLetter() -> String{
-            return String(describing: ai.word.characters.first!)
+            return "L" + String(describing: ai.word.characters.first!).capitalized
     }
     
     func wordSize() -> String{
         let n = ai.word.characters.count
         switch n {
-        case let n where n<6:
+        case let n where n<7:
             return("short")
-        case let n where n>10:
+        case let n where n>9:
             return("extraLong")
         default:
             return("long")

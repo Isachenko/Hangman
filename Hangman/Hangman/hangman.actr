@@ -4,7 +4,7 @@
 (add-dm
 ;;Letters
 (LA isa letter value a used false)
-(LB isa letter value b used false)
+(LB isa letter value n used false)
 (LC isa letter value c used false)
 (LD isa letter value d used false)
 (LE isa letter value e used false)
@@ -30,12 +30,12 @@
 (LY isa letter value y used false)
 (LZ isa letter value z used false)
 
-(W1 isa word value conclusion)
-(W1 isa word value illusion)
-(W1 isa word value dousen)
-(W1 isa word value usage)
-(W1 isa word value table)
-(W1 isa word value computer)
+(wabandon isa word value abandon letter1 LA letter2 LB letter3 LA letter4 LN letter5 LD letter6 LO letter7 LN length long)
+(wabandoned isa word value abandoned letter1 LA letter2 LB letter3 LA letter4 LN letter5 LD letter6 LO letter7 LN letter8 LE letter9 LD length long)
+(wability isa word value ability letter1 LA letter2 LB letter3 LI letter4 LL letter5 LI letter6 T letter7 Y length long)
+(wnature isa word value nature letter1 LN letter2 LA letter3 T letter4 U letter5 R letter6 LE length short)
+(wnaive isa word value naive letter1 LN letter LA letter3 LI letter4 LV letter5 LE length short)
+(wneighbourhood isa word value neighbourhood letter1 LN letter2 LE letter3 LI letter4 LG letter5 LH letter6 LB letter7 LO letter8 U letter9 R letter10 LH  letter11 LO letter12 LO letter13 LD length extraLong)
 
 (goal isa goal state guess_letter)
 (goal2 isa goal state reinforce-right-guess)
@@ -43,7 +43,8 @@
 (goal4 isa goal state reset)
 )
 
-(set-all-baselevels -100 10) ;; time offset and number of references
+(set-all-baselevels -100 10)
+;; time offset and number of references
 
 ;; At the start of the model, retrieve any decision
 
@@ -51,7 +52,6 @@
 =goal>
 isa goal
 state guess_letter
-
 ==>
 =goal>
 state anounce_decision
@@ -91,30 +91,26 @@ state recording-result)
 
 (p get-feedback
 =goal>
-    isa goal
-    state recording-result
-    letteris =decision
+isa goal
+state recording-result
+letteris =decision
 =action>
-    isa move
-    feedback =result
-    firstLetter =firstLetter
-    firstLetterKnown =firstLetterKnown
-    wordSize =wordSize
-
-
-
-
+isa move
+feedback =result
+firstLetter =firstLetter
+firstLetterKnown =firstLetterKnown
+wordSize =wordSize
 ==>
 =goal>
 isa goal
-    state check-if-right
-    ifLastLetterGood =result
-    letteris =decision
-    firstLetter =firstLetter
-    firstLetterKnown =firstLetterKnown
-    wordSize =wordSize
+state check-if-right
+ifLastLetterGood =result
+letteris =decision
+firstLetter =firstLetter
+firstLetterKnown =firstLetterKnown
+wordSize =wordSize
 
-   )
+)
 
 
 (p reinforce-right-guess
@@ -123,10 +119,16 @@ isa goal
 state check-if-right
 ifLastLetterGood right
 letteris =decision
+firstLetter =firstLetter
+firstLetterKnown =firstLetterKnown
+wordSize =wordSize
 ==>
 =goal>
 isa goal
 state clear-imaginal
+firstLetter =firstLetter
+firstLetterKnown =firstLetterKnown
+wordSize =wordSize
 +imaginal>
 isa letter
 value =decision
@@ -138,11 +140,19 @@ used true
 =goal>
 isa goal
 state clear-imaginal
+firstLetter =firstLetter
+firstLetterKnown =firstLetterKnown
+wordSize =wordSize
 ==>
 -imaginal>
 =goal>
 isa goal
-state guess_letter
+state if-known
+firstLetter =firstLetter
+firstLetterKnown =firstLetterKnown
+wordSize =wordSize
+-action>
+
 )
 
 
@@ -151,6 +161,89 @@ state guess_letter
 isa goal
 state check-if-right
 ifLastLetterGood wrong
+firstLetter =firstLetter
+firstLetterKnown =firstLetterKnown
+wordSize =wordSize
+==>
+=goal>
+isa goal
+state if-known
+firstLetter =firstLetter
+firstLetterKnown =firstLetterKnown
+wordSize =wordSize
+
+)
+
+
+
+(p retrieve-from-first-letter
+=goal>
+isa goal
+state if-known
+firstLetterKnown true
+firstLetter =firstLetter
+wordSize =wordSize
+
+==>
++retrieval>
+isa word
+letter1 =firstLetter
+=goal>
+isa goal
+state guess-word
+firstLetter =firstLetter
+wordSize =wordSize
+)
+
+(p retrieve-from-length
+=goal>
+isa goal
+state if-known
+firstLetterKnown true
+firstLetter =firstLetter
+wordSize =wordSize
+==>
++retrieval>
+isa word
+length =wordSize
+=goal>
+isa goal
+state guess-word
+firstLetter =firstLetter
+wordSize =wordSize
+)
+
+
+(p yes
+=goal>
+isa goal
+state guess-word
+firstLetter =firstLetter
+wordSize =wordSize
+
+=retrieval>
+isa word
+letter1 =firstLetter
+length =wordSize
+value =guessWord
+
+==>
+=goal>
+isa goal
+state clear-action
++action>
+isa guess
+guessWord =guessWord
+-action>
+
+)
+
+
+(p if-first-letter-unknown
+=goal>
+isa goal
+state if-known
+firstLetterKnown false
 ==>
 =goal>
 isa goal
@@ -160,3 +253,4 @@ state guess_letter
 
 
 (goal-focus goal)
+
