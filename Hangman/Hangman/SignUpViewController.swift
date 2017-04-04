@@ -24,7 +24,7 @@ class SignUpViewController: UIViewController {
         nameTextField.alpha = 0
         confirmButton.alpha = 0
         startButton.alpha = 0
-        nameTextField.text = UserDefaults.standard.value(forKey: "playername") as! String
+        nameTextField.text = (UserDefaults.standard.value(forKey: "playername") ?? "Player1") as! String
      
      
        // let databaseURL = documentDirectoryURL.URLByAppendingPathComponent("MyDataBase.sqlite")
