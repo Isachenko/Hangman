@@ -38,6 +38,8 @@ class CurrentGameModel {
     let ai = PlayerInfo()
     let aiBrain = AIBrain()
     var words = [String]()
+    let playerName = UserDefaults.standard.value(forKey: "playername") as! String
+
     
     init() {
         readWordsFromFile()

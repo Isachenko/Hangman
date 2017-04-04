@@ -24,6 +24,7 @@ class SignUpViewController: UIViewController {
         nameTextField.alpha = 0
         confirmButton.alpha = 0
         startButton.alpha = 0
+        nameTextField.text = UserDefaults.standard.value(forKey: "playername") as! String
      
      
        // let databaseURL = documentDirectoryURL.URLByAppendingPathComponent("MyDataBase.sqlite")
@@ -94,6 +95,7 @@ UIView.animate(withDuration: 1, animations: {
  
  
 @IBAction func acceptedName(_ sender: Any) {
+    UserDefaults.standard.setValue(nameTextField.text, forKey: "playername")
 UIView.animate(withDuration: 1, animations: {
       self.startButton.alpha = 1 }) 
     }

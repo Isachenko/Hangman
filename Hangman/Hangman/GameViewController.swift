@@ -157,7 +157,7 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
         aiPanelView.word = currentGameModel.ai.wordHiden
     }
     func showNames() {
-        humanPanelView.name = "Human intelligence"
+        humanPanelView.name = UserDefaults.standard.value(forKey: "playername") as! String
         aiPanelView.name = "Artificial intelligence"
     }
     
