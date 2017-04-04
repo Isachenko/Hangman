@@ -11,6 +11,7 @@
 		1C456CB91E7050E300839220 /* grey_heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C456CB51E7050E300839220 /* grey_heart.png */; };
 		1C456CBA1E7050E300839220 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C456CB61E7050E300839220 /* background.jpg */; };
 		1C456CBF1E705F5300839220 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C456CBE1E705F5300839220 /* TutorialViewController.swift */; };
+		6AC432D41E93FA83006EF0FC /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC432D31E93FA83006EF0FC /* HistoryViewController.swift */; };
 		6ACD15F71E7690D20054E73C /* hangman.actr in Resources */ = {isa = PBXBuildFile; fileRef = 6ACD15F61E7690D20054E73C /* hangman.actr */; };
 		6ACD15F91E7803000054E73C /* Words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6ACD15F81E7803000054E73C /* Words.txt */; };
 		6AFFC7791E59AC6700C7E487 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFFC7781E59AC6700C7E487 /* AppDelegate.swift */; };
@@ -49,6 +50,7 @@
 		1C456CB51E7050E300839220 /* grey_heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grey_heart.png; sourceTree = "<group>"; };
 		1C456CB61E7050E300839220 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		1C456CBE1E705F5300839220 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		6AC432D31E93FA83006EF0FC /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = ../HistoryViewController.swift; sourceTree = "<group>"; };
 		6ACD15F61E7690D20054E73C /* hangman.actr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hangman.actr; sourceTree = "<group>"; };
 		6ACD15F81E7803000054E73C /* Words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Words.txt; sourceTree = "<group>"; };
 		6AFFC7751E59AC6700C7E487 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +172,7 @@
 		6AFFC7F41E6C1A5700C7E487 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6AC432D31E93FA83006EF0FC /* HistoryViewController.swift */,
 				F512F3481E75D13600EDBE5D /* SignUpViewController.swift */,
 				F550A7691E747BAA00AFBBC8 /* roundButton.swift */,
 				1C456CBE1E705F5300839220 /* TutorialViewController.swift */,
@@ -289,6 +292,7 @@
 				6AFFC7EE1E64225900C7E487 /* GlobalInfoModel.swift in Sources */,
 				6AFFC7E81E63384200C7E487 /* WordPickerViewController.swift in Sources */,
 				6AFFC7CF1E59AFE500C7E487 /* Production.swift in Sources */,
+				6AC432D41E93FA83006EF0FC /* HistoryViewController.swift in Sources */,
 				1C456CBF1E705F5300839220 /* TutorialViewController.swift in Sources */,
 				6AFFC7D31E59AFE500C7E487 /* Support.swift in Sources */,
 				6AFFC7E21E609AC300C7E487 /* GameViewController.swift in Sources */,

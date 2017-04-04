@@ -63,6 +63,20 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
     
     @IBOutlet weak var gamStatusLabel: UILabel!
     func showGameEndPopUp(){
+        
+        if (self.currentGameModel.gameState == .humanJustWon){
+            var playerScore = UserDefaults.standard.integer(forKey: "playerscore")
+            playerScore += 1
+            UserDefaults.standard.setValue(playerScore, forKey: "playerscore")
+        } else {
+            var aiScore = UserDefaults.standard.integer(forKey: "aiscore")
+            aiScore += 1
+            UserDefaults.standard.setValue(aiScore, forKey: "aiscore")
+    
+        }
+        
+
+        
         AIWordLabel.text = "AI word was: " + self.currentGameModel.ai.word
         HumanWordLabel.text = "Human word was: " + self.currentGameModel.human.word
         gamStatusLabel.text = "Status: " + self.currentGameModel.gameState.rawValue
