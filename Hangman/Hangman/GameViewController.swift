@@ -61,9 +61,11 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
     @IBOutlet weak var AIWordLabel: UILabel!
     @IBOutlet weak var HumanWordLabel: UILabel!
     
+    @IBOutlet weak var gamStatusLabel: UILabel!
     func showGameEndPopUp(){
         AIWordLabel.text = "AI word was: " + self.currentGameModel.ai.word
         HumanWordLabel.text = "Human word was: " + self.currentGameModel.human.word
+        gamStatusLabel.text = "Status: " + self.currentGameModel.gameState.rawValue
         
         self.view.addSubview(addItemView)
         addItemView.center = self.view.center
@@ -178,6 +180,7 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
         // ai make move
         if (currentGameModel.isGameEnd()) {
             currentGameModel.resetAiforNewTurn()
+            showGameEndPopUp()
         } else {
             let aiTryTuple = currentGameModel.aiTryLetter()
             if (aiTryTuple.1 != .error) {
@@ -189,10 +192,12 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
             }
             
         }
+        
         if (currentGameModel.isGameEnd()) {
             currentGameModel.resetAiforNewTurn()
             showGameEndPopUp()
         }
+        
         if (currentGameModel.isFirstletterGuessed() == true){
             print(currentGameModel.aiBrain.getGuessWord())
             
