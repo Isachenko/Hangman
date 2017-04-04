@@ -68,6 +68,7 @@ class AIBrain {
     
     func getGuessWord() -> String {
         actrAI.run()
+        printSpreadActivationChunks()
         return actrAI.lastAction("guessWord")!
         
     }
@@ -92,10 +93,20 @@ class AIBrain {
             }
         }
     }
+    func printSpreadActivationChunks(){
+        for (key) in actrAI.dm.chunks {
+            if (key.key.characters.first!.description == "w"){
+                print(actrAI.dm.chunks[key.key]?.spreadingActivation() ?? "Error")
+                
+            }
+        }
+        
+    }
     func memorizeLetter(letter: Character){
         let aux = "L" + letter.description.capitalized
         historyChunks[aux] = historyChunks[aux]!+1
         print(historyChunks)
+        
         
     }
     

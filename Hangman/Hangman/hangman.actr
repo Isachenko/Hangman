@@ -30,12 +30,112 @@
 (LY isa letter value y used false)
 (LZ isa letter value z used false)
 
+(whangman isa word value hangman letter1 LH letter2 LA letter3 LN letter4 LG letter5 LM letter6 LA letter7 LN length long)
+(wtable isa word value table letter1 LT letter2 LA letter3 LB letter4 LL letter5 LE length short)
+(wkiller isa word value killer letter1 LK letter2 LI letter3 LL letter4 LL letter5 LE letter6 LR length short)
+(wplumber isa word value plumber letter1 LP letter2 LL letter3 LU letter4 LM letter5 LB letter6 LE letter7 LR length long)
 (wabandon isa word value abandon letter1 LA letter2 LB letter3 LA letter4 LN letter5 LD letter6 LO letter7 LN length long)
 (wabandoned isa word value abandoned letter1 LA letter2 LB letter3 LA letter4 LN letter5 LD letter6 LO letter7 LN letter8 LE letter9 LD length long)
-(wability isa word value ability letter1 LA letter2 LB letter3 LI letter4 LL letter5 LI letter6 T letter7 Y length long)
-(wnature isa word value nature letter1 LN letter2 LA letter3 T letter4 U letter5 R letter6 LE length short)
-(wnaive isa word value naive letter1 LN letter LA letter3 LI letter4 LV letter5 LE length short)
-(wneighbourhood isa word value neighbourhood letter1 LN letter2 LE letter3 LI letter4 LG letter5 LH letter6 LB letter7 LO letter8 U letter9 R letter10 LH  letter11 LO letter12 LO letter13 LD length extraLong)
+(wability isa word value ability letter1 LA letter2 LB letter3 LI letter4 LL letter5 LI letter6 LT letter7 LY length long)
+(wabandon isa word value abandon letter1 LA letter2 LB letter3 LA letter4 LN letter5 LD letter6 LO letter7 LN length long)
+(wabandoned isa word value abandoned letter1 LA letter2 LB letter3 LA letter4 LN letter5 LD letter6 LO letter7 LN letter8 LE letter9 LD length long)
+(wability isa word value ability letter1 LA letter2 LB letter3 LI letter4 LL letter5 LI letter6 LT letter7 LY length long)
+(wbeautifully isa word value beautifully letter1 LB letter2 LE letter3 LA letter4 LU letter5 LT letter6 LI letter7 LF letter8 LU letter9 LL letter10 LL letter11 LY length extraLong)
+(wbeauty isa word value beauty letter1 LB letter2 LE letter3 LA letter4 LU letter5 LT letter6 LY length short)
+(wbehave isa word value behave letter1 LB letter2 LE letter3 LH letter4 LA letter5 LV letter6 LE length short)
+(wbehaviour isa word value behaviour letter1 LB letter2 LE letter3 LH letter4 LA letter5 LV letter6 LI letter7 LO letter8 LU letter9 LR length long)
+(wbirthday isa word value birthday letter1 LB letter2 LI letter3 LR letter4 LT letter5 LH letter6 LD letter7 LA letter8 LY length long)
+(wbiscuit isa word value biscuit letter1 LB letter2 LI letter3 LS letter4 LC letter5 LU letter6 LI letter7 LT length long)
+(wcampaign isa word value campaign letter1 LC letter2 LA letter3 LM letter4 LP letter5 LA letter6 LI letter7 LG letter8 LN length long)
+(wcamera isa word value camera letter1 LC letter2 LA letter3 LM letter4 LE letter5 LR letter6 LA length short)
+(wcarpet isa word value carpet letter1 LC letter2 LA letter3 LR letter4 LP letter5 LE letter6 LT length short)
+(wcarrot isa word value carrot letter1 LC letter2 LA letter3 LR letter4 LR letter5 LO letter6 LT length short)
+(wchemist isa word value chemist letter1 LC letter2 LH letter3 LE letter4 LM letter5 LI letter6 LS letter7 LT length long)
+(wchemistry isa word value chemistry letter1 LC letter2 LH letter3 LE letter4 LM letter5 LI letter6 LS letter7 LT letter8 LR letter9 LY length long)
+(wdecoration isa word value decoration letter1 LD letter2 LE letter3 LC letter4 LO letter5 LR letter6 LA letter7 LT letter8 LI letter9 LO letter10 LN length extraLong)
+(wdepartment isa word value department letter1 LD letter2 LE letter3 LP letter4 LA letter5 LR letter6 LT letter7 LM letter8 LE letter9 LN letter10 LT length extraLong)
+(wdeparture isa word value departure letter1 LD letter2 LE letter3 LP letter4 LA letter5 LR letter6 LT letter7 LU letter8 LR letter9 LE length long)
+(wdevelopment isa word value development letter1 LD letter2 LE letter3 LV letter4 LE letter5 LL letter6 LO letter7 LP letter8 LM letter9 LE letter10 LN letter11 LT length extraLong)
+(wdiamond isa word value diamond letter1 LD letter2 LI letter3 LA letter4 LM letter5 LO letter6 LN letter7 LD length long)
+(wdiary isa word value diary letter1 LD letter2 LI letter3 LA letter4 LR letter5 LY length short)
+(wdictionary isa word value dictionary letter1 LD letter2 LI letter3 LC letter4 LT letter5 LI letter6 LO letter7 LN letter8 LA letter9 LR letter10 LY length extraLong)
+(weducation isa word value education letter1 LE letter2 LD letter3 LU letter4 LC letter5 LA letter6 LT letter7 LI letter8 LO letter9 LN length long)
+(weffect isa word value effect letter1 LE letter2 LF letter3 LF letter4 LE letter5 LC letter6 LT length short)
+(welectricity isa word value electricity letter1 LE letter2 LL letter3 LE letter4 LC letter5 LT letter6 LR letter7 LI letter8 LC letter9 LI letter10 LT letter11 LY length extraLong)
+(welectronic isa word value electronic letter1 LE letter2 LL letter3 LE letter4 LC letter5 LT letter6 LR letter7 LO letter8 LN letter9 LI letter10 LC length extraLong)
+(welegant isa word value elegant letter1 LE letter2 LL letter3 LE letter4 LG letter5 LA letter6 LN letter7 LT length long)
+(wforecast isa word value forecast letter1 LF letter2 LO letter3 LR letter4 LE letter5 LC letter6 LA letter7 LS letter8 LT length long)
+(wforeign isa word value foreign letter1 LF letter2 LO letter3 LR letter4 LE letter5 LI letter6 LG letter7 LN length long)
+(wforest isa word value forest letter1 LF letter2 LO letter3 LR letter4 LE letter5 LS letter6 LT length short)
+(wforever isa word value forever letter1 LF letter2 LO letter3 LR letter4 LE letter5 LV letter6 LE letter7 LR length long)
+(wharmful isa word value harmful letter1 LH letter2 LA letter3 LR letter4 LM letter5 LF letter6 LU letter7 LL length long)
+(wharmless isa word value harmless letter1 LH letter2 LA letter3 LR letter4 LM letter5 LL letter6 LE letter7 LS letter8 LS length long)
+(whighlight isa word value highlight letter1 LH letter2 LI letter3 LG letter4 LH letter5 LL letter6 LI letter7 LG letter8 LH letter9 LT length long)
+(whighway isa word value highway letter1 LH letter2 LI letter3 LG letter4 LH letter5 LW letter6 LA letter7 LY length long)
+(wkilometre isa word value kilometre letter1 LK letter2 LI letter3 LL letter4 LO letter5 LM letter6 LE letter7 LT letter8 LR letter9 LE length long)
+(wkindly isa word value kindly letter1 LK letter2 LI letter3 LN letter4 LD letter5 LL letter6 LY length short)
+(wkindness isa word value kindness letter1 LK letter2 LI letter3 LN letter4 LD letter5 LN letter6 LE letter7 LS letter8 LS length long)
+(wlatter isa word value latter letter1 LL letter2 LA letter3 LT letter4 LT letter5 LE letter6 LR length short)
+(wlaugh isa word value laugh letter1 LL letter2 LA letter3 LU letter4 LG letter5 LH length short)
+(wlaunch isa word value launch letter1 LL letter2 LA letter3 LU letter4 LN letter5 LC letter6 LH length short)
+(wlevel isa word value level letter1 LL letter2 LE letter3 LV letter4 LE letter5 LL length short)
+(wlibrary isa word value library letter1 LL letter2 LI letter3 LB letter4 LR letter5 LA letter6 LR letter7 LY length long)
+(wlicence isa word value licence letter1 LL letter2 LI letter3 LC letter4 LE letter5 LN letter6 LC letter7 LE length long)
+(wmystery isa word value mystery letter1 LM letter2 LY letter3 LS letter4 LT letter5 LE letter6 LR letter7 LY length long)
+(wnature isa word value nature letter1 LN letter2 LA letter3 LT letter4 LU letter5 LR letter6 LE length short)
+(wneighbourhood isa word value neighbourhood letter1 LN letter2 LE letter3 LI letter4 LG letter5 LH letter6 LB letter7 LO letter8 LU letter9 LR letter10 LH letter11 LO letter12 LO letter13 LD length extraLong)
+(wnewspaper isa word value newspaper letter1 LN letter2 LE letter3 LW letter4 LS letter5 LP letter6 LA letter7 LP letter8 LE letter9 LR length long)
+(woccasion isa word value occasion letter1 LO letter2 LC letter3 LC letter4 LA letter5 LS letter6 LI letter7 LO letter8 LN length long)
+(woctober isa word value october letter1 LO letter2 LC letter3 LT letter4 LO letter5 LB letter6 LE letter7 LR length long)
+(woperation isa word value operation letter1 LO letter2 LP letter3 LE letter4 LR letter5 LA letter6 LT letter7 LI letter8 LO letter9 LN length long)
+(wopinion isa word value opinion letter1 LO letter2 LP letter3 LI letter4 LN letter5 LI letter6 LO letter7 LN length long)
+(wopponent isa word value opponent letter1 LO letter2 LP letter3 LP letter4 LO letter5 LN letter6 LE letter7 LN letter8 LT length long)
+(worgan isa word value organ letter1 LO letter2 LR letter3 LG letter4 LA letter5 LN length short)
+(worganization isa word value organization letter1 LO letter2 LR letter3 LG letter4 LA letter5 LN letter6 LI letter7 LZ letter8 LA letter9 LT letter10 LI letter11 LO letter12 LN length extraLong)
+(wprince isa word value prince letter1 LP letter2 LR letter3 LI letter4 LN letter5 LC letter6 LE length short)
+(wprincess isa word value princess letter1 LP letter2 LR letter3 LI letter4 LN letter5 LC letter6 LE letter7 LS letter8 LS length long)
+(wprofessor isa word value professor letter1 LP letter2 LR letter3 LO letter4 LF letter5 LE letter6 LS letter7 LS letter8 LO letter9 LR length long)
+(wprofit isa word value profit letter1 LP letter2 LR letter3 LO letter4 LF letter5 LI letter6 LT length short)
+(wprogram isa word value program letter1 LP letter2 LR letter3 LO letter4 LG letter5 LR letter6 LA letter7 LM length long)
+(wquality isa word value quality letter1 LQ letter2 LU letter3 LA letter4 LL letter5 LI letter6 LT letter7 LY length long)
+(wquantity isa word value quantity letter1 LQ letter2 LU letter3 LA letter4 LN letter5 LT letter6 LI letter7 LT letter8 LY length long)
+(wquarter isa word value quarter letter1 LQ letter2 LU letter3 LA letter4 LR letter5 LT letter6 LE letter7 LR length long)
+(wqueen isa word value queen letter1 LQ letter2 LU letter3 LE letter4 LE letter5 LN length short)
+(wquestion isa word value question letter1 LQ letter2 LU letter3 LE letter4 LS letter5 LT letter6 LI letter7 LO letter8 LN length long)
+(wrelation isa word value relation letter1 LR letter2 LE letter3 LL letter4 LA letter5 LT letter6 LI letter7 LO letter8 LN length long)
+(wrelationship isa word value relationship letter1 LR letter2 LE letter3 LL letter4 LA letter5 LT letter6 LI letter7 LO letter8 LN letter9 LS letter10 LH letter11 LI letter12 LP length extraLong)
+(wreputation isa word value reputation letter1 LR letter2 LE letter3 LP letter4 LU letter5 LT letter6 LA letter7 LT letter8 LI letter9 LO letter10 LN length extraLong)
+(wrequest isa word value request letter1 LR letter2 LE letter3 LQ letter4 LU letter5 LE letter6 LS letter7 LT length long)
+(wsample isa word value sample letter1 LS letter2 LA letter3 LM letter4 LP letter5 LL letter6 LE length short)
+(wsatisfaction isa word value satisfaction letter1 LS letter2 LA letter3 LT letter4 LI letter5 LS letter6 LF letter7 LA letter8 LC letter9 LT letter10 LI letter11 LO letter12 LN length extraLong)
+(wscratch isa word value scratch letter1 LS letter2 LC letter3 LR letter4 LA letter5 LT letter6 LC letter7 LH length long)
+(wscream isa word value scream letter1 LS letter2 LC letter3 LR letter4 LE letter5 LA letter6 LM length short)
+(wscreen isa word value screen letter1 LS letter2 LC letter3 LR letter4 LE letter5 LE letter6 LN length short)
+(wscrew isa word value screw letter1 LS letter2 LC letter3 LR letter4 LE letter5 LW length short)
+(wsteal isa word value steal letter1 LS letter2 LT letter3 LE letter4 LA letter5 LL length short)
+(wsteam isa word value steam letter1 LS letter2 LT letter3 LE letter4 LA letter5 LM length short)
+(wsteel isa word value steel letter1 LS letter2 LT letter3 LE letter4 LE letter5 LL length short)
+(wstranger isa word value stranger letter1 LS letter2 LT letter3 LR letter4 LA letter5 LN letter6 LG letter7 LE letter8 LR length long)
+(wstrategy isa word value strategy letter1 LS letter2 LT letter3 LR letter4 LA letter5 LT letter6 LE letter7 LG letter8 LY length long)
+(wstream isa word value stream letter1 LS letter2 LT letter3 LR letter4 LE letter5 LA letter6 LM length short)
+(wstreet isa word value street letter1 LS letter2 LT letter3 LR letter4 LE letter5 LE letter6 LT length short)
+(wstrength isa word value strength letter1 LS letter2 LT letter3 LR letter4 LE letter5 LN letter6 LG letter7 LT letter8 LH length long)
+(wstress isa word value stress letter1 LS letter2 LT letter3 LR letter4 LE letter5 LS letter6 LS length short)
+(wtechnology isa word value technology letter1 LT letter2 LE letter3 LC letter4 LH letter5 LN letter6 LO letter7 LL letter8 LO letter9 LG letter10 LY length extraLong)
+(wtelephone isa word value telephone letter1 LT letter2 LE letter3 LL letter4 LE letter5 LP letter6 LH letter7 LO letter8 LN letter9 LE length long)
+(wtelevision isa word value television letter1 LT letter2 LE letter3 LL letter4 LE letter5 LV letter6 LI letter7 LS letter8 LI letter9 LO letter10 LN length extraLong)
+(wtemperature isa word value temperature letter1 LT letter2 LE letter3 LM letter4 LP letter5 LE letter6 LR letter7 LA letter8 LT letter9 LU letter10 LR letter11 LE length extraLong)
+(wunderground isa word value underground letter1 LU letter2 LN letter3 LD letter4 LE letter5 LR letter6 LG letter7 LR letter8 LO letter9 LU letter10 LN letter11 LD length extraLong)
+(wuniverse isa word value universe letter1 LU letter2 LN letter3 LI letter4 LV letter5 LE letter6 LR letter7 LS letter8 LE length long)
+(wuniversity isa word value university letter1 LU letter2 LN letter3 LI letter4 LV letter5 LE letter6 LR letter7 LS letter8 LI letter9 LT letter10 LY length extraLong)
+(wvegetable isa word value vegetable letter1 LV letter2 LE letter3 LG letter4 LE letter5 LT letter6 LA letter7 LB letter8 LL letter9 LE length long)
+(wvehicle isa word value vehicle letter1 LV letter2 LE letter3 LH letter4 LI letter5 LC letter6 LL letter7 LE length long)
+(wventure isa word value venture letter1 LV letter2 LE letter3 LN letter4 LT letter5 LU letter6 LR letter7 LE length long)
+(wversion isa word value version letter1 LV letter2 LE letter3 LR letter4 LS letter5 LI letter6 LO letter7 LN length long)
+(wwitness isa word value witness letter1 LW letter2 LI letter3 LT letter4 LN letter5 LE letter6 LS letter7 LS length long)
+(wwoman isa word value woman letter1 LW letter2 LO letter3 LM letter4 LA letter5 LN length short)
+(wyellow isa word value yellow letter1 LY letter2 LE letter3 LL letter4 LL letter5 LO letter6 LW length short)
+(wyesterday isa word value yesterday letter1 LY letter2 LE letter3 LS letter4 LT letter5 LE letter6 LR letter7 LD letter8 LA letter9 LY length long)
 
 (goal isa goal state guess_letter)
 (goal2 isa goal state reinforce-right-guess)
@@ -43,10 +143,12 @@
 (goal4 isa goal state reset)
 )
 
-(set-all-baselevels -100 10)
+
 ;; time offset and number of references
 
 ;; At the start of the model, retrieve any decision
+
+
 
 (p retrieve-letter
 =goal>
@@ -58,6 +160,7 @@ state anounce_decision
 +retrieval>
 isa letter
 used false
+-action>
 )
 
 (p make-decision
@@ -106,9 +209,9 @@ isa goal
 state check-if-right
 ifLastLetterGood =result
 letteris =decision
-firstLetter =firstLetter
+letter1 =firstLetter
 firstLetterKnown =firstLetterKnown
-wordSize =wordSize
+length =wordSize
 
 )
 
@@ -119,16 +222,16 @@ isa goal
 state check-if-right
 ifLastLetterGood right
 letteris =decision
-firstLetter =firstLetter
+letter1 =firstLetter
 firstLetterKnown =firstLetterKnown
-wordSize =wordSize
+length =wordSize
 ==>
 =goal>
 isa goal
 state clear-imaginal
-firstLetter =firstLetter
+letter1 =firstLetter
 firstLetterKnown =firstLetterKnown
-wordSize =wordSize
+length =wordSize
 +imaginal>
 isa letter
 value =decision
@@ -140,17 +243,17 @@ used true
 =goal>
 isa goal
 state clear-imaginal
-firstLetter =firstLetter
+letter1 =firstLetter
 firstLetterKnown =firstLetterKnown
-wordSize =wordSize
+length =wordSize
 ==>
 -imaginal>
 =goal>
 isa goal
 state if-known
-firstLetter =firstLetter
+letter1 =firstLetter
 firstLetterKnown =firstLetterKnown
-wordSize =wordSize
+length =wordSize
 -action>
 
 )
@@ -161,19 +264,18 @@ wordSize =wordSize
 isa goal
 state check-if-right
 ifLastLetterGood wrong
-firstLetter =firstLetter
+letter1 =firstLetter
 firstLetterKnown =firstLetterKnown
-wordSize =wordSize
+length =wordSize
 ==>
 =goal>
 isa goal
 state if-known
-firstLetter =firstLetter
+letter1 =firstLetter
 firstLetterKnown =firstLetterKnown
-wordSize =wordSize
+length =wordSize
 
 )
-
 
 
 (p retrieve-from-first-letter
@@ -181,18 +283,20 @@ wordSize =wordSize
 isa goal
 state if-known
 firstLetterKnown true
-firstLetter =firstLetter
-wordSize =wordSize
+letter1 =firstLetter
+length =wordSize
+
 
 ==>
+
 +retrieval>
 isa word
 letter1 =firstLetter
 =goal>
 isa goal
 state guess-word
-firstLetter =firstLetter
-wordSize =wordSize
+letter1 =firstLetter
+length =wordSize
 )
 
 (p retrieve-from-length
@@ -200,43 +304,47 @@ wordSize =wordSize
 isa goal
 state if-known
 firstLetterKnown true
-firstLetter =firstLetter
-wordSize =wordSize
+letter1 =firstLetter
+length =wordSize
+
 ==>
+
 +retrieval>
 isa word
 length =wordSize
 =goal>
 isa goal
 state guess-word
-firstLetter =firstLetter
-wordSize =wordSize
+letter1 =firstLetter
+length =wordSize
 )
+
 
 
 (p yes
 =goal>
 isa goal
 state guess-word
-firstLetter =firstLetter
-wordSize =wordSize
+letter1 =firstLetter
+length =wordSize
 
 =retrieval>
 isa word
 letter1 =firstLetter
 length =wordSize
 value =guessWord
-
 ==>
 =goal>
 isa goal
-state clear-action
+state guess_letter
 +action>
 isa guess
 guessWord =guessWord
--action>
 
 )
+
+
+
 
 
 (p if-first-letter-unknown
@@ -253,4 +361,6 @@ state guess_letter
 
 
 (goal-focus goal)
+
+
 

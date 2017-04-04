@@ -12,9 +12,9 @@ class Declarative  {
 
     var baseLevelDecay: Double = 0.5
     var optimizedLearning = false
-    var maximumAssociativeStrength: Double = 3
-    var goalActivation: Double = 1 // W parameter
-    var retrievalThreshold: Double = -2
+    var maximumAssociativeStrength: Double = 100000
+    var goalActivation: Double = 100 // W parameter
+    var retrievalThreshold: Double = -10000
     var activationNoise: Double? = 0.25
     var chunks = [String:Chunk]()
     var misMatchPenalty: Double = 5

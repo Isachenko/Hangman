@@ -232,9 +232,10 @@ Set the baselevel of a chunk
                     totalSlots += 1
                 default: break
                 }
+            }
                 let retunr_value = (totalSlots==0 ? 0 : totalSji * (model.dm.goalActivation / Double(totalSlots)))
                 return retunr_value
-            }
+            
         }
         return 0
     }
@@ -257,6 +258,7 @@ Set the baselevel of a chunk
     */
     func activation() -> Double {
         if creationTime == nil {return 0}
+        print("The spreading of \(self.name) is \(self.spreadingActivation())")
         return  self.baseLevelActivation()
             + self.spreadingActivation() + calculateNoise()
     }
