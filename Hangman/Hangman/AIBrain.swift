@@ -199,10 +199,9 @@ class AIBrain {
         for (key) in actrAI.dm.chunks {
             if (key.key.characters.first!.description == "L"){
                 actrAI.dm.chunks[key.key]?.setSlot(slot: "used", value: "false")
-//                print(key.key)
-//                print(actrAI.dm.chunks[key.key]?.activation() ?? "A")
-//                print(actrAI.dm.chunks[key.key]?.baseLevelActivation() ?? "Q")
-                
+            }
+            if (key.key.characters.first!.description == "w"){
+                actrAI.dm.chunks[key.key]?.setSlot(slot: "used", value: "false")
             }
         }
     }

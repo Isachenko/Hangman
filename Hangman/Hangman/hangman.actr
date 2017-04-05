@@ -30,7 +30,6 @@
 (LY isa letter value y used false)
 (LZ isa letter value z used false)
 
-
 (whangman isa word value hangman letter1 LH length long wordUsed false wordUsed false)
 (wtable isa word value table letter1 LT length short wordUsed false)
 (wkiller isa word value killer letter1 LK length short wordUsed false)
@@ -134,6 +133,7 @@
 (wwoman isa word value woman letter1 LW length short wordUsed false)
 (wyellow isa word value yellow letter1 LY length short wordUsed false)
 (wyesterday isa word value yesterday letter1 LY length long wordUsed false)
+
 
 (goal isa goal state guess_letter)
 (goal2 isa goal state reinforce-right-guess)
@@ -287,6 +287,8 @@ length =wordSize
 +retrieval>
 isa word
 letter1 =firstLetter
+length =wordSize
+wordUsed false
 =goal>
 isa goal
 state guess-word
@@ -305,11 +307,16 @@ length =wordSize
 =retrieval>
 isa word
 letter1 =firstLetter
+length =wordSize
 value =guessWord
 ==>
+=retrieval>
+isa word
+wordUsed true
+
 =goal>
 isa goal
-state guess_letter
+state clear-action
 +action>
 isa guess
 guessWord =guessWord
@@ -317,7 +324,17 @@ guessWord =guessWord
 )
 
 
+(p clear-action
+=goal>
+isa goal
+state clear-action
+==>
 
+-retrieval>
+=goal>
+isa goal
+state guess_letter
+)
 
 (p if-first-letter-unknown
 =goal>
