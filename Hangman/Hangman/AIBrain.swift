@@ -69,7 +69,7 @@ class AIBrain {
     
     func getLetter() -> Character {
         //return getRandomLetter()
-//        flag = true
+        flag = false
         actrAI.run()
         return actrAI.lastAction("choice")!.characters.first!
     }
@@ -98,6 +98,7 @@ class AIBrain {
                 return character
             }
         }
+        print("Word is not right, get a new one")
         possibleWordBool = false
         return getRandomLetter()
         
@@ -116,11 +117,14 @@ class AIBrain {
     }
     
     func getGuessWordACTR() -> String {
-//        if (!flag){
-//            actrAI.run()
-//            print("Run flag")
-//        }
-//        flag = false
+        if (flag){
+            actrAI.run()
+            print("Run flag")
+            flag = false
+        }
+        else{
+            flag = true
+        }
         actrAI.run()
         print("Letras usadas")
         print(usedLetters)

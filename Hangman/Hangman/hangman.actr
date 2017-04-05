@@ -159,6 +159,7 @@ state anounce_decision
 isa letter
 used false
 
+
 )
 
 (p make-decision
@@ -287,6 +288,27 @@ length =wordSize
 +retrieval>
 isa word
 letter1 =firstLetter
+wordUsed false
+
+=goal>
+isa goal
+state guess-word
+letter1 =firstLetter
+length =wordSize
+)
+
+(p retrieve-from-length
+=goal>
+isa goal
+state if-known
+firstLetterKnown true
+letter1 =firstLetter
+length =wordSize
+
+==>
+
++retrieval>
+isa word
 length =wordSize
 wordUsed false
 =goal>
@@ -295,6 +317,8 @@ state guess-word
 letter1 =firstLetter
 length =wordSize
 )
+
+
 
 
 (p yes
@@ -334,7 +358,54 @@ state clear-action
 =goal>
 isa goal
 state guess_letter
+-action>
 )
+
+(p mismatch-length
+=goal>
+isa goal
+state guess-word
+letter1 =firstLetter
+length =wordSize
+=retrieval>
+isa word
+- length =wordSize
+value =guessWord
+==>
+=retrieval>
+wordUsed true
+=goal>
+isa goal
+state clear-action
++action>
+isa guess
+guessWord =guessWord
+
+
+)
+
+(p mismatch-first-letter
+=goal>
+isa goal
+state guess-word
+letter1 =firstLetter
+length =wordSize
+=retrieval>
+isa word
+- letter1 =firstLetter
+value =guessWord
+==>
+=retrieval>
+wordUsed true
+=goal>
+isa goal
+state clear-action
++action>
+isa guess
+guessWord =guessWord
+
+)
+
 
 (p if-first-letter-unknown
 =goal>

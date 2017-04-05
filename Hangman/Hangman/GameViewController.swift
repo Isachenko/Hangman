@@ -191,6 +191,7 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
         }
         updateCurGameStateView()
         updateViews()
+        usleep(300000)
         
         // ai make move
         if (currentGameModel.isGameEnd()) {
