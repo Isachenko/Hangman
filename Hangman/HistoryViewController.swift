@@ -21,11 +21,15 @@ class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         playerNameLabel.text = playerName + " score"
-        playerScoreLabel.text = String(playerScore)
-        aiScoreLabel.text = String(aiScore)
+        playerScoreLabel.text = String(playerScore * 100)
+        aiScoreLabel.text = String(aiScore * 100)
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
