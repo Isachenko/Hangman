@@ -194,9 +194,12 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
         
         // ai make move
         if (currentGameModel.isGameEnd()) {
+            print("Is the end of the game?")
+            print(currentGameModel.isGameEnd())
             currentGameModel.resetAiforNewTurn()
             showGameEndPopUp()
         } else {
+            print("Computer turn")
             let aiTryTuple = currentGameModel.aiTryLetter()
             if (aiTryTuple.1 != .error) {
                 if (aiTryTuple.1 == .rightLetter) {
@@ -206,18 +209,25 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
                 }
             }
             
-        }
-        
-        if (currentGameModel.isGameEnd()) {
-            currentGameModel.resetAiforNewTurn()
-            showGameEndPopUp()
-        }
-        
-        if (currentGameModel.isFirstletterGuessed() == true){
-            print(currentGameModel.aiBrain.getGuessWord())
+            if (currentGameModel.isFirstletterGuessed() == true){
+                if (currentGameModel.isFirstletterGuessed() == true){
+                    print("Value of possibleWordBOOl")
+                    print(currentGameModel.getPossibleWordMVC())
+                    if (!currentGameModel.getPossibleWordMVC()){
+                        print(currentGameModel.aiBrain.getGuessWord())
+                    }
+                }
+            }
             
-            // if ( currentGameModel.aiBrain.getGuessWord() == currentGameModel.ai.word{print("Voila")}
+            if (currentGameModel.isGameEnd()) {
+                currentGameModel.resetAiforNewTurn()
+                showGameEndPopUp()
+            }
+            
         }
+        
+        
+
         
         updateCurGameStateView()
         updateViews()

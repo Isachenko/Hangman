@@ -39,6 +39,8 @@ class CurrentGameModel {
     let aiBrain = AIBrain()
     var words = [String]()
     let playerName = UserDefaults.standard.value(forKey: "playername") as! String
+    var wrongLetters = [Character]()
+    var rightLetters = [Character]()
 
     
     init() {
@@ -78,6 +80,7 @@ class CurrentGameModel {
             self.human.word = human
             self.ai.word = ai
             gameState = .humanTurn
+            aiBrain.setTheSizeOfHiddenWord(size: ai.characters.count)
         }
     }
     
@@ -102,7 +105,17 @@ class CurrentGameModel {
     
     func aiTryLetter() -> (Character, PlayerInfo.tryLetterResult) {
         if (gameState == .aiTurn) {
-            let letter = aiBrain.getLetter()
+            var letter = "a".characters.first!
+            if(!aiBrain.getPossibleWordBool()){
+                print("AI letter")
+                letter = aiBrain.getLetter()
+                print(letter)
+            }
+            else{
+                print("SWIFT letter")
+                letter = aiBrain.getLetterFromWord()
+                print(letter)
+            }
             let result = ai.tryLetter(letter: letter)
             var feedback = ""
             switch result {
@@ -113,11 +126,18 @@ class CurrentGameModel {
                 feedback = "right"
                 gameState = .humanTurn
                 aiBrain.memorizeLetter(letter: letter)
+                rightLetters.append(letter)
             case .wrongLetter:
+                aiBrain.setPossibleWordBool(state: false)
                 print("ai: wrong letter \(letter)")
                 feedback = "wrong"
                 gameState = .humanTurn
+                wrongLetters.append(letter)
             }
+
+            aiBrain.setUsedLetters(letter: String(letter))
+            aiBrain.updateDictWrongLetters(dictionary: wrongLetters)
+            aiBrain.updateDictRightLetters(dictionary: rightLetters)
             checkForGameEnd()
             aiBrain.setFeedback(value: feedback, enoughtLettersToGuessed: isItenoughtLettersToGuessed(), firstLetterKnown: isFirstletterGuessed(), firstLetter: getTheFirstLetter(), wordSize: wordSize())
             return (letter, result)
@@ -137,7 +157,9 @@ class CurrentGameModel {
         print("number of guessed letters ", lenght - n)
         return (n < (lenght / 2)) 
     }
-    
+    func getPossibleWordMVC()-> Bool{
+        return aiBrain.getPossibleWordBool()
+    }
     func isFirstletterGuessed() -> Bool {
         return ai.wordHiden.characters.first != "_"
     }
@@ -161,6 +183,9 @@ class CurrentGameModel {
     func resetAiforNewTurn() {
         aiBrain.storePreviousGamesChunks()
         aiBrain.restoreChunkUsedValue()
+        aiBrain.resetDictionaries()
+        wrongLetters = [Character]()
+        rightLetters = [Character]()
     }
     
     func checkForGameEnd() {
