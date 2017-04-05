@@ -15,7 +15,7 @@ class TutorialViewController: UIViewController {
 
         videoView.allowsInlineMediaPlayback = true
         
-        videoView.loadHTMLString("<iframe width=\"\(videoView.frame.width)\" height=\"\(videoView.frame.height)\" src=\"https://www.youtube.com/embed/mxCH4HApYIw" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
+        videoView.loadHTMLString("<iframe width=\"\(videoView.frame.width)\" height=\"\(videoView.frame.height)\" src=\"https://www.youtube.com/embed/mxCH4HApYIw\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
     }
 
     override func didReceiveMemoryWarning() {
