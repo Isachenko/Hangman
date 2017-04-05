@@ -77,8 +77,9 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
         
 
         
-        AIWordLabel.text = "AI word was: " + self.currentGameModel.ai.word
-        HumanWordLabel.text = "Human word was: " + self.currentGameModel.human.word
+        AIWordLabel.text = "AI: " + self.currentGameModel.ai.word
+        let playername = UserDefaults.standard.value(forKey: "playername") as! String
+        HumanWordLabel.text = playername + ": " + self.currentGameModel.human.word
         gamStatusLabel.text = "Status: " + self.currentGameModel.gameState.rawValue
         
         self.view.addSubview(addItemView)
