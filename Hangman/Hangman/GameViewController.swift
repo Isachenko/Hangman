@@ -212,7 +212,6 @@ class GameViewController: UIViewController, UIPopoverPresentationControllerDeleg
             
             if (currentGameModel.isFirstletterGuessed() == true){
                 if (currentGameModel.isFirstletterGuessed() == true){
-                    print("Value of possibleWordBOOl")
                     print(currentGameModel.getPossibleWordMVC())
                     if (!currentGameModel.getPossibleWordMVC()){
                         print(currentGameModel.aiBrain.getGuessWord())

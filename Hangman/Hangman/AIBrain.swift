@@ -9,7 +9,7 @@
 import Foundation
 
 class AIBrain {
-    var historyChunks: [String:Int] = [ "LA" : 10,
+    var historyChunks: [String:Int] = [ "LA" : 0,
                                         "LB" : 0,
                                         "LC" : 0,
                                         "LD" : 0,
@@ -22,12 +22,12 @@ class AIBrain {
                                         "LK" : 0,
                                         "LL" : 0,
                                         "LM" : 0,
-                                        "LN" : 10,
+                                        "LN" : 0,
                                         "LO" : 0,
                                         "LP" : 0,
                                         "LQ" : 0,
-                                        "LR" : 10,
-                                        "LS" : 10,
+                                        "LR" : 0,
+                                        "LS" : 0,
                                         "LT" : 0,
                                         "LU" : 0,
                                         "LV" : 0,
@@ -75,26 +75,8 @@ class AIBrain {
     }
     
     func getLetterFromWord() -> Character {
-        print("getLetterFromWord")
-        //        for character in possibleWordString.characters {
-        //            if( (possibleWordString.characters.count == sizeOfHiddenWord) && rightLettersDict.contains(character)){
-        //                print("Caracter de la posible palabra")
-        //                let aux = "L" + String(character).capitalized
-        //                actrAI.dm.chunks[aux]?.setSlot(slot: "used", value: "true")
-        //                setPossibleWordBool(state: true)
-        //                return character
-        //
-        //            }
-        //            if(wrongLettersDict.contains(character)){
-        //                setPossibleWordBool(state: false)
-        //                break
-        //            }
-        //        }
         for character in possibleWordString.characters {
             if(!rightLettersDict.contains(character)){
-                print("Got one letter from word")
-                print(rightLettersDict)
-                print(character)
                 return character
             }
         }
@@ -122,15 +104,8 @@ class AIBrain {
             print("Run flag")
             flag = false
         }
-        else{
-            flag = true
-        }
         actrAI.run()
-        print("Letras usadas")
-        print(usedLetters)
-        let aux = actrAI.lastAction("guessWord")!
-        print(aux)
-        return aux
+        return actrAI.lastAction("guessWord")!
         
     }
     func setUsedLetters(letter: String){
@@ -151,15 +126,9 @@ class AIBrain {
     }
     func setPossibleWordString(word: String){
         possibleWordString = word
-        print("setPossibleWordString")
-        print(setPossibleWordString)
     }
     func checkLettersInWord(possibleWord: String)->Bool{
         var isCorrect = true
-        print("Size of the words")
-        print(possibleWord)
-        print(possibleWord.characters.count)
-        print(sizeOfHiddenWord)
         if(!(possibleWord.characters.count == sizeOfHiddenWord)) {
             isCorrect = false
         }
@@ -172,17 +141,12 @@ class AIBrain {
     }
     
     func updateDictWrongLetters(dictionary: [Character]){
-        print("Wrong letters dictionary")
-        print(dictionary)
         wrongLettersDict = dictionary
     }
     func updateDictRightLetters(dictionary: [Character]){
-        print("Right letters dictionary")
-        print(dictionary)
         rightLettersDict = dictionary
     }
     func resetDictionaries(){
-        print("Reset dictionaries and variables")
         rightLettersDict = [Character]()
         wrongLettersDict = [Character]()
         usedLetters = ""
@@ -190,8 +154,6 @@ class AIBrain {
     }
     
     func setFeedback(value: String, enoughtLettersToGuessed: Bool, firstLetterKnown: Bool, firstLetter: String, wordSize: String) {
-        print("Aqui está el feedback")
-        print(value, enoughtLettersToGuessed, firstLetterKnown, firstLetter, wordSize)
         actrAI.modifyLastAction(slot: "feedback", value: value)
         actrAI.modifyLastAction(slot: "enoughtLettersToGuessed", value: String(enoughtLettersToGuessed) )
         actrAI.modifyLastAction(slot: "firstLetterKnown", value: String(firstLetterKnown))
@@ -236,9 +198,6 @@ class AIBrain {
         }
         for (key) in actrAI.dm.chunks {
             if (key.key.characters.first!.description == "L"){
-            print(key.key)
-            print(historyChunks)
-            print(historyChunks[key.key] ?? "Error")
             actrAI.dm.chunks[key.key]?.setBaseLevel(timeDiff: -100, references: historyChunks[key.key]!)
             }
         
